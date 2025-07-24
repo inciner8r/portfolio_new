@@ -1,0 +1,9 @@
+# Avatar Placeholder
+# 
+# Replace this file with your actual avatar image.
+# Recommended specifications:
+# - Format: JPG, PNG, or WebP
+# - Size: 400x400 pixels or larger (square aspect ratio)
+# - File name: avatar.jpg (or update the Hero.tsx component accordingly)
+#
+# The image will be displayed as a 128x128px circular avatar in the hero section.

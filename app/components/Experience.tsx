@@ -12,15 +12,31 @@ const Experience = () => {
       location: 'Remote',
       duration: 'Dec 2024 - Present',
       type: 'Full-time',
-      description: 'Current role focusing on advanced software engineering solutions and blockchain integration. Working on cutting-edge projects that combine traditional software development with Web3 technologies.',
+      description: 'Working on multi-tenant, multi-domain frontend applications with Next.js and Python backend. Focusing on storefront development, API optimization, webhook management, and solving scaling issues for high-traffic applications.',
       achievements: [
-        'Leading development of scalable blockchain applications',
-        'Implementing advanced software engineering solutions',
-        'Working with modern tech stack for enterprise-level applications',
-        'Contributing to innovative Web3 integration projects'
+        'Developed multi-tenant, multi-domain frontend storefront using Next.js',
+        'Built and optimized Python backend APIs and webhooks for better performance',
+        'Solved critical scaling issues for high-traffic applications',
+        'Optimized Sun Motors site cron jobs handling >1.5 lakh vehicle records',
+        'Implemented ML-based recommendation system for enhanced user experience',
+        'Managed cloud infrastructure on AWS and Hetzner/Coolify platforms'
       ],
-      technologies: ['Golang', 'React', 'Blockchain', 'Web3', 'Cloud Technologies'],
-      website: '#'
+      technologies: ['Next.js', 'Python', 'AWS', 'Hetzner', 'Coolify', 'Machine Learning', 'Multi-tenant Architecture'],
+      website: '#',
+      projects: [
+        {
+          name: 'Multi-tenant Storefront',
+          description: 'Next.js frontend with Python backend, supporting multiple domains and tenants'
+        },
+        {
+          name: 'Sun Motors Optimization',
+          description: 'Optimized cron jobs processing >1.5 lakh vehicle records with improved performance'
+        },
+        {
+          name: 'ML Recommendation System',
+          description: 'Built machine learning-based recommendation system for personalized user experience'
+        }
+      ]
     },
     {
       id: 2,
@@ -29,15 +45,31 @@ const Experience = () => {
       location: 'Remote',
       duration: 'Jun 2024 - Dec 2024',
       type: 'Full-time',
-      description: 'Developed AI-integrated software solutions combining artificial intelligence with blockchain technologies. Worked on applications that bridge the gap between AI and decentralized systems.',
+      description: 'Developed high-speed trading bot for Telegram, built indexer for new Solana and EVM coins, worked on UI development, and implemented swap functionality using 1inch, Uniswap, and Jupiter protocols.',
       achievements: [
-        'Built AI-integrated software solutions from concept to deployment',
-        'Developed applications combining AI and blockchain technologies',
-        'Implemented machine learning models for blockchain applications',
-        'Collaborated with cross-functional teams on innovative AI projects'
+        'Created high-speed Telegram trading bot with real-time market integration',
+        'Built comprehensive indexer for new Solana and EVM coins',
+        'Developed responsive and intuitive UI for trading applications',
+        'Implemented multi-protocol swap functionality (1inch, Uniswap, Jupiter)',
+        'Integrated EVM and Solana blockchain networks for cross-chain trading',
+        'Optimized trading algorithms for high-frequency operations'
       ],
-      technologies: ['AI/ML', 'Blockchain', 'Python', 'React', 'Smart Contracts'],
-      website: '#'
+      technologies: ['Telegram Bot API', 'Solana', 'EVM', '1inch', 'Uniswap', 'Jupiter', 'React', 'Node.js', 'Web3'],
+      website: '#',
+      projects: [
+        {
+          name: 'High-Speed Trading Bot',
+          description: 'Telegram bot for fast cryptocurrency trading with real-time market data'
+        },
+        {
+          name: 'Coin Indexer',
+          description: 'Comprehensive indexing system for new Solana and EVM tokens'
+        },
+        {
+          name: 'Multi-Protocol Swaps',
+          description: 'Integrated 1inch, Uniswap, and Jupiter for seamless token swapping'
+        }
+      ]
     },
     {
       id: 3,
