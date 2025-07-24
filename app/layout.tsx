@@ -13,11 +13,23 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Portfolio | Your Name",
-  description: "A minimal, aesthetic portfolio showcasing my projects and work experience",
-  keywords: ["portfolio", "developer", "projects", "work experience"],
-  authors: [{ name: "Your Name" }],
+  title: "Punarv Pawade | Software Engineer & Blockchain Developer",
+  description: "Software Engineer with 2+ years of experience in full-stack development and blockchain technologies. Specialized in Golang, React, and Web3 development.",
+  keywords: ["Software Engineer", "Full-stack Developer", "Blockchain Developer", "Golang", "ReactJS", "NextJS", "Ethereum", "Aptos", "Web3", "Smart Contract", "Open Source", "Punarv Pawade"],
+  authors: [{ name: "Punarv Pawade" }],
   viewport: "width=device-width, initial-scale=1",
+  openGraph: {
+    title: "Punarv Pawade | Software Engineer & Blockchain Developer",
+    description: "Software Engineer with 2+ years of experience in full-stack development and blockchain technologies.",
+    url: "https://www.punarv.dev/",
+    siteName: "Punarv Pawade Portfolio",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Punarv Pawade | Software Engineer & Blockchain Developer",
+    description: "Software Engineer with 2+ years of experience in full-stack development and blockchain technologies.",
+  },
 };
 
 export default function RootLayout({

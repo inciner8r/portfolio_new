@@ -1,77 +1,79 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Calendar, MapPin, ExternalLink } from 'lucide-react';
+import { Calendar, MapPin, ExternalLink, Briefcase } from 'lucide-react';
 
 const Experience = () => {
   const experiences = [
     {
       id: 1,
-      company: 'Tech Solutions Inc.',
-      position: 'Senior Full Stack Developer',
-      location: 'San Francisco, CA',
-      duration: '2022 - Present',
+      company: 'AFT Group',
+      position: 'Software Engineer',
+      location: 'Remote',
+      duration: 'Dec 2024 - Present',
       type: 'Full-time',
-      description: 'Leading development of scalable web applications serving 100k+ users. Architected microservices infrastructure and mentored junior developers.',
+      description: 'Current role focusing on advanced software engineering solutions and blockchain integration. Working on cutting-edge projects that combine traditional software development with Web3 technologies.',
       achievements: [
-        'Reduced application load time by 40% through optimization techniques',
-        'Led a team of 5 developers in successful product launches',
-        'Implemented CI/CD pipelines improving deployment efficiency by 60%',
-        'Designed and built RESTful APIs handling 1M+ requests daily'
+        'Leading development of scalable blockchain applications',
+        'Implementing advanced software engineering solutions',
+        'Working with modern tech stack for enterprise-level applications',
+        'Contributing to innovative Web3 integration projects'
       ],
-      technologies: ['React', 'Node.js', 'PostgreSQL', 'AWS', 'Docker', 'TypeScript'],
+      technologies: ['Golang', 'React', 'Blockchain', 'Web3', 'Cloud Technologies'],
       website: '#'
     },
     {
       id: 2,
-      company: 'Digital Innovations Ltd.',
-      position: 'Full Stack Developer',
-      location: 'New York, NY',
-      duration: '2020 - 2022',
+      company: 'MetabotAI',
+      position: 'Software Engineer',
+      location: 'Remote',
+      duration: 'Jun 2024 - Dec 2024',
       type: 'Full-time',
-      description: 'Developed and maintained multiple client projects using modern web technologies. Collaborated with design teams to create pixel-perfect user interfaces.',
+      description: 'Developed AI-integrated software solutions combining artificial intelligence with blockchain technologies. Worked on applications that bridge the gap between AI and decentralized systems.',
       achievements: [
-        'Built 15+ responsive web applications from concept to deployment',
-        'Improved code quality by implementing automated testing (95% coverage)',
-        'Collaborated with UX/UI designers to enhance user experience',
-        'Optimized database queries reducing response time by 50%'
+        'Built AI-integrated software solutions from concept to deployment',
+        'Developed applications combining AI and blockchain technologies',
+        'Implemented machine learning models for blockchain applications',
+        'Collaborated with cross-functional teams on innovative AI projects'
       ],
-      technologies: ['Vue.js', 'Express.js', 'MongoDB', 'Firebase', 'Sass', 'JavaScript'],
+      technologies: ['AI/ML', 'Blockchain', 'Python', 'React', 'Smart Contracts'],
       website: '#'
     },
     {
       id: 3,
-      company: 'StartupXYZ',
-      position: 'Frontend Developer',
-      location: 'Austin, TX',
-      duration: '2019 - 2020',
-      type: 'Full-time',
-      description: 'Joined early-stage startup to build the initial product from ground up. Worked closely with founders to translate business requirements into technical solutions.',
-      achievements: [
-        'Built the entire frontend architecture for the MVP',
-        'Implemented responsive design supporting all device types',
-        'Integrated third-party APIs and payment processing systems',
-        'Contributed to product strategy and technical decision making'
-      ],
-      technologies: ['React', 'Redux', 'Material-UI', 'Stripe API', 'Jest', 'Webpack'],
-      website: '#'
-    },
-    {
-      id: 4,
-      company: 'Freelance',
-      position: 'Web Developer',
+      company: 'Lazarus Network',
+      position: 'Developer Intern → Full Stack Developer',
       location: 'Remote',
-      duration: '2018 - 2019',
-      type: 'Contract',
-      description: 'Provided web development services to small businesses and entrepreneurs. Specialized in creating custom websites and e-commerce solutions.',
+      duration: 'Apr 2023 - Present',
+      type: 'Full-time',
+      description: 'Started as Developer Intern and promoted to Full Stack Developer. Responsible for backend development in Golang and Node.js, frontend with NextJS and ReactJS, and managing cloud infrastructure.',
       achievements: [
-        'Completed 20+ projects for diverse clients across industries',
-        'Maintained 100% client satisfaction rate',
-        'Delivered all projects on time and within budget',
-        'Established long-term partnerships with 5+ recurring clients'
+        'Promoted from intern to full-time developer within the organization',
+        'Built Erebrus: Authentication middleware for gRPC endpoints with central gateway',
+        'Developed Sotreus: VPN+Firewall deployment with Ethereum/Aptos wallet auth',
+        'Created Myriadflow: Complete backend for launchpad/marketplace with smart contracts',
+        'Built Airbot: Discord bot with Midjourney, DALLE2, and ChatGPT integration'
       ],
-      technologies: ['WordPress', 'PHP', 'MySQL', 'jQuery', 'Bootstrap', 'WooCommerce'],
-      website: '#'
+      technologies: ['Golang', 'Node.js', 'NextJS', 'ReactJS', 'AWS EC2', 'Google Cloud', 'Docker', 'GitHub Actions', 'gRPC', 'libp2p', 'Stripe'],
+      website: '#',
+      projects: [
+        {
+          name: 'Erebrus',
+          description: 'Authentication middleware for gRPC endpoints, central gateway for VPN nodes, peer discovery with libp2p'
+        },
+        {
+          name: 'Sotreus', 
+          description: 'Authentication for Ethereum/Aptos wallets, automated VPN+Firewall deployment, user subscriptions with Stripe'
+        },
+        {
+          name: 'Myriadflow',
+          description: 'Complete backend for launchpad/marketplace, smart contract deployments, subgraph deployment'
+        },
+        {
+          name: 'Airbot',
+          description: 'Discord bot with Midjourney, DALLE2, and ChatGPT integration'
+        }
+      ]
     }
   ];
 
@@ -89,8 +91,8 @@ const Experience = () => {
             Work Experience
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            My professional journey through various roles, companies, and projects 
-            that have shaped my expertise in full-stack development.
+            My professional journey through blockchain development, full-stack engineering, 
+            and AI integration across innovative companies and cutting-edge projects.
           </p>
         </motion.div>
 
@@ -151,6 +153,21 @@ const Experience = () => {
 
                     <p className="text-muted-foreground mb-6 leading-relaxed">{experience.description}</p>
 
+                    {/* Key Projects for Lazarus Network */}
+                    {experience.projects && (
+                      <div className="mb-6">
+                        <h5 className="text-sm font-semibold mb-3 text-foreground">Key Projects:</h5>
+                        <div className="space-y-3">
+                          {experience.projects.map((project, idx) => (
+                            <div key={idx} className="glass p-4 rounded-xl border border-accent/10">
+                              <h6 className="font-semibold text-accent mb-1">{project.name}</h6>
+                              <p className="text-sm text-muted-foreground">{project.description}</p>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
                     <div className="mb-6">
                       <h5 className="text-sm font-semibold mb-3 text-foreground">Key Achievements:</h5>
                       <ul className="space-y-2">
@@ -183,6 +200,53 @@ const Experience = () => {
           </div>
         </div>
 
+        {/* Education Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="mt-20"
+        >
+          <h3 className="text-3xl font-bold text-center mb-12 text-foreground">Education & Achievements</h3>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="glass p-8 rounded-2xl">
+              <div className="flex items-center mb-4">
+                <Briefcase className="w-6 h-6 text-primary mr-3" />
+                <h4 className="text-xl font-bold text-foreground">Education</h4>
+              </div>
+              <h5 className="text-lg font-semibold text-primary mb-2">BE Computer Engineering</h5>
+              <p className="text-muted-foreground mb-2">CGPA: 8.68</p>
+              <p className="text-sm text-muted-foreground">Strong foundation in computer science fundamentals, algorithms, and software engineering principles.</p>
+            </div>
+            
+            <div className="glass p-8 rounded-2xl">
+              <div className="flex items-center mb-4">
+                <Calendar className="w-6 h-6 text-accent mr-3" />
+                <h4 className="text-xl font-bold text-foreground">Notable Achievements</h4>
+              </div>
+              <ul className="space-y-2 text-sm">
+                <li className="flex items-start space-x-2">
+                  <div className="w-1.5 h-1.5 bg-accent rounded-full mt-2 flex-shrink-0"></div>
+                  <span className="text-muted-foreground">ETHGlobal Participant: Scaling Ethereum 2023</span>
+                </li>
+                <li className="flex items-start space-x-2">
+                  <div className="w-1.5 h-1.5 bg-accent rounded-full mt-2 flex-shrink-0"></div>
+                  <span className="text-muted-foreground">Aptos RandomHack: Multiple project submissions</span>
+                </li>
+                <li className="flex items-start space-x-2">
+                  <div className="w-1.5 h-1.5 bg-accent rounded-full mt-2 flex-shrink-0"></div>
+                  <span className="text-muted-foreground">Active GitHub contributor and open-source advocate</span>
+                </li>
+                <li className="flex items-start space-x-2">
+                  <div className="w-1.5 h-1.5 bg-accent rounded-full mt-2 flex-shrink-0"></div>
+                  <span className="text-muted-foreground">Multiple blockchain hackathon participations</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </motion.div>
+
         {/* Call to action */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -192,18 +256,19 @@ const Experience = () => {
           className="text-center mt-16"
         >
           <div className="glass p-8 rounded-2xl max-w-2xl mx-auto">
-            <h3 className="text-2xl font-bold mb-4 text-foreground">Interested in Working Together?</h3>
+            <h3 className="text-2xl font-bold mb-4 text-foreground">Always Open to New Opportunities</h3>
             <p className="text-muted-foreground mb-6 leading-relaxed">
-              I'm always open to discussing new opportunities, interesting projects, 
-              or just having a conversation about technology and development.
+              I'm passionate about working on innovative projects, contributing to open-source, 
+              and collaborating with talented teams. Let's discuss how we can build something amazing together.
             </p>
-            <motion.button
+            <motion.a
+              href="#contact"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-3 bg-primary text-primary-foreground rounded-full font-medium hover:bg-primary/90 transition-colors duration-300"
+              className="px-8 py-3 bg-primary text-primary-foreground rounded-full font-medium hover:bg-primary/90 transition-colors duration-300 inline-block"
             >
               Get In Touch
-            </motion.button>
+            </motion.a>
           </div>
         </motion.div>
       </div>
