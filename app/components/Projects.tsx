@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ExternalLink, Github, Calendar, Award, Zap } from "lucide-react";
+import { Twitter, Send, MessageCircle } from "lucide-react";
 
 const Projects = () => {
   const projects = [
@@ -111,14 +112,18 @@ const Projects = () => {
                   whileHover={{ scale: 1.02 }}
                   className="relative group overflow-hidden rounded-2xl"
                 >
-                  <div className="aspect-video bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl flex items-center justify-center">
-                    <span className="text-muted-foreground">
-                      Project Screenshot
-                    </span>
+                  <div className="aspect-video bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl flex items-center justify-center overflow-hidden">
+                    <img
+                      src={project.image}
+                      alt={project.title + " screenshot"}
+                      className="object-cover w-full h-full"
+                    />
                   </div>
                   <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-4">
                     <motion.a
                       href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.9 }}
                       className="p-3 bg-primary rounded-full text-primary-foreground hover:bg-primary/90 transition-colors"
@@ -127,6 +132,8 @@ const Projects = () => {
                     </motion.a>
                     <motion.a
                       href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.9 }}
                       className="p-3 bg-card rounded-full text-card-foreground hover:bg-card/90 transition-colors"
@@ -181,6 +188,8 @@ const Projects = () => {
                 <div className="flex space-x-4">
                   <motion.a
                     href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     className="flex items-center space-x-2 px-6 py-3 bg-primary text-primary-foreground rounded-full font-medium hover:bg-primary/90 transition-colors duration-300"
@@ -190,6 +199,8 @@ const Projects = () => {
                   </motion.a>
                   <motion.a
                     href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     className="flex items-center space-x-2 px-6 py-3 border border-primary text-primary rounded-full font-medium hover:bg-primary hover:text-primary-foreground transition-all duration-300"
@@ -241,12 +252,16 @@ const Projects = () => {
                   <div className="flex space-x-2">
                     <a
                       href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="p-2 text-muted-foreground hover:text-primary transition-colors"
                     >
                       <ExternalLink size={16} />
                     </a>
                     <a
                       href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="p-2 text-muted-foreground hover:text-primary transition-colors"
                     >
                       <Github size={16} />
@@ -315,6 +330,39 @@ const Projects = () => {
               >
                 <Github size={16} />
                 <span>View More Projects</span>
+              </motion.a>
+              <motion.a
+                href="https://x.com/inciner8rz"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="flex items-center space-x-2 px-8 py-3 border border-primary text-primary rounded-full font-medium hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+              >
+                <Twitter size={16} />
+                <span>Twitter</span>
+              </motion.a>
+              <motion.a
+                href="https://t.me/inciner8r"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="flex items-center space-x-2 px-8 py-3 border border-primary text-primary rounded-full font-medium hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+              >
+                <Send size={16} />
+                <span>Telegram</span>
+              </motion.a>
+              <motion.a
+                href="https://discord.com/users/569047479140483082"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="flex items-center space-x-2 px-8 py-3 border border-primary text-primary rounded-full font-medium hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+              >
+                <MessageCircle size={16} />
+                <span>Discord</span>
               </motion.a>
             </div>
           </div>
