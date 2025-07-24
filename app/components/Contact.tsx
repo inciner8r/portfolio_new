@@ -1,26 +1,26 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Github, Linkedin, Globe, Code, Zap, Users } from 'lucide-react';
 
 const Contact = () => {
   const contactInfo = [
     {
       icon: Mail,
       label: 'Email',
-      value: 'hello@yourname.com',
-      href: 'mailto:hello@yourname.com'
+      value: 'punarvpawade17@gmail.com',
+      href: 'mailto:punarvpawade17@gmail.com'
     },
     {
-      icon: Phone,
-      label: 'Phone',
-      value: '+1 (555) 123-4567',
-      href: 'tel:+15551234567'
+      icon: Globe,
+      label: 'Website',
+      value: 'www.punarv.dev',
+      href: 'https://www.punarv.dev/'
     },
     {
       icon: MapPin,
       label: 'Location',
-      value: 'San Francisco, CA',
+      value: 'Maharashtra, India',
       href: '#'
     }
   ];
@@ -29,20 +29,20 @@ const Contact = () => {
     {
       icon: Github,
       label: 'GitHub',
-      href: '#',
+      href: 'https://github.com/inciner8r',
       color: 'hover:text-primary'
     },
     {
       icon: Linkedin,
       label: 'LinkedIn',
-      href: '#',
+      href: 'https://www.linkedin.com/in/punarvpawade/',
       color: 'hover:text-blue-400'
     },
     {
-      icon: Twitter,
-      label: 'Twitter',
-      href: '#',
-      color: 'hover:text-blue-500'
+      icon: Mail,
+      label: 'Email',
+      href: 'mailto:punarvpawade17@gmail.com',
+      color: 'hover:text-green-400'
     }
   ];
 
@@ -57,11 +57,11 @@ const Contact = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-            Get In Touch
+            Let's Connect
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Have a project in mind or just want to chat about technology? 
-            I'd love to hear from you. Let's create something amazing together.
+            Have a project in mind, want to collaborate on open-source, or just want to chat about blockchain and technology? 
+            I'd love to hear from you. Let's build something amazing together!
           </p>
         </motion.div>
 
@@ -125,7 +125,7 @@ const Contact = () => {
                     id="subject"
                     name="subject"
                     className="w-full px-4 py-3 rounded-lg bg-input border border-border text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300"
-                    placeholder="Project Collaboration"
+                    placeholder="Project Collaboration / Hackathon / Open Source"
                   />
                 </div>
                 
@@ -138,7 +138,7 @@ const Contact = () => {
                     name="message"
                     rows={5}
                     className="w-full px-4 py-3 rounded-lg bg-input border border-border text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300 resize-none"
-                    placeholder="Tell me about your project or just say hello..."
+                    placeholder="Tell me about your project, collaboration idea, or just say hello..."
                   ></textarea>
                 </div>
                 
@@ -170,6 +170,8 @@ const Contact = () => {
                   <motion.a
                     key={info.label}
                     href={info.href}
+                    target={info.href.startsWith('http') ? '_blank' : '_self'}
+                    rel={info.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -190,12 +192,14 @@ const Contact = () => {
             </div>
 
             <div>
-              <h3 className="text-2xl font-bold mb-6 text-foreground">Follow Me</h3>
+              <h3 className="text-2xl font-bold mb-6 text-foreground">Connect With Me</h3>
               <div className="flex space-x-4">
                 {socialLinks.map((social, index) => (
                   <motion.a
                     key={social.label}
                     href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     initial={{ opacity: 0, scale: 0 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -212,21 +216,65 @@ const Contact = () => {
             </div>
 
             <div className="glass p-6 rounded-2xl">
-              <h4 className="text-lg font-semibold mb-4 text-foreground">Let's Work Together</h4>
+              <h4 className="text-lg font-semibold mb-4 text-foreground">Let's Build Something Amazing Together</h4>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                I'm currently available for freelance projects and full-time opportunities. 
-                Whether you're a startup looking to build your MVP or an established company 
-                needing to scale your development team, I'd love to help.
+                I'm currently available for exciting projects and collaborations. Whether you're working on 
+                blockchain applications, full-stack development, or innovative open-source projects, 
+                I'd love to contribute and help bring your ideas to life.
               </p>
               <div className="flex flex-wrap gap-2">
-                {['Web Development', 'UI/UX Design', 'Consulting', 'Code Review'].map((service) => (
+                {[
+                  { icon: Code, name: 'Full-Stack Development' },
+                  { icon: Zap, name: 'Blockchain & Web3' },
+                  { icon: Users, name: 'Open Source' },
+                  { icon: Globe, name: 'Hackathons' }
+                ].map((service) => (
                   <span
-                    key={service}
-                    className="px-3 py-1 text-sm bg-primary/10 text-primary rounded-full border border-primary/20"
+                    key={service.name}
+                    className="flex items-center space-x-1 px-3 py-1 text-sm bg-primary/10 text-primary rounded-full border border-primary/20"
                   >
-                    {service}
+                    <service.icon size={14} />
+                    <span>{service.name}</span>
                   </span>
                 ))}
+              </div>
+            </div>
+
+            {/* Call to Action */}
+            <div className="glass p-6 rounded-2xl border border-accent/20">
+              <h4 className="text-lg font-semibold mb-3 text-foreground">Quick Connect</h4>
+              <p className="text-sm text-muted-foreground mb-4">
+                Prefer a quick chat? Feel free to reach out directly through any of these channels:
+              </p>
+              <div className="space-y-2">
+                <motion.a
+                  href="mailto:punarvpawade17@gmail.com"
+                  whileHover={{ scale: 1.02 }}
+                  className="flex items-center space-x-2 p-2 rounded-lg hover:bg-primary/5 transition-colors"
+                >
+                  <Mail size={16} className="text-primary" />
+                  <span className="text-sm text-foreground">Email for project discussions</span>
+                </motion.a>
+                <motion.a
+                  href="https://www.linkedin.com/in/punarvpawade/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.02 }}
+                  className="flex items-center space-x-2 p-2 rounded-lg hover:bg-primary/5 transition-colors"
+                >
+                  <Linkedin size={16} className="text-primary" />
+                  <span className="text-sm text-foreground">LinkedIn for professional networking</span>
+                </motion.a>
+                <motion.a
+                  href="https://github.com/inciner8r"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.02 }}
+                  className="flex items-center space-x-2 p-2 rounded-lg hover:bg-primary/5 transition-colors"
+                >
+                  <Github size={16} className="text-primary" />
+                  <span className="text-sm text-foreground">GitHub for code collaboration</span>
+                </motion.a>
               </div>
             </div>
           </motion.div>

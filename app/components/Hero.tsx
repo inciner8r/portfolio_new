@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, circOut } from 'framer-motion';
 import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
 
 const Hero = () => {
@@ -22,7 +22,7 @@ const Hero = () => {
       opacity: 1,
       transition: {
         duration: 0.8,
-        ease: "easeOut"
+        ease: circOut
       }
     }
   };
@@ -69,43 +69,46 @@ const Hero = () => {
           variants={itemVariants}
           className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-foreground via-primary to-accent bg-clip-text text-transparent"
         >
-          Your Name
+          Punarv Pawade
         </motion.h1>
         
         <motion.h2
           variants={itemVariants}
           className="text-2xl md:text-3xl text-muted-foreground mb-8"
         >
-          Full Stack Developer & UI/UX Designer
+          Software Engineer | Blockchain Developer
         </motion.h2>
         
         <motion.p
           variants={itemVariants}
           className="text-lg text-muted-foreground max-w-2xl mx-auto mb-12 leading-relaxed"
         >
-          I create beautiful, functional, and user-centered digital experiences. 
-          Passionate about turning complex problems into simple, elegant solutions.
+          Software Engineer with 2+ years of experience in full-stack development and blockchain technologies. 
+          Currently working at AFT Group, specialized in building scalable web applications, smart contracts, 
+          and decentralized systems using modern technologies like Golang, React, and various blockchain platforms.
         </motion.p>
         
         <motion.div
           variants={itemVariants}
           className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
         >
-          <motion.button
+          <motion.a
+            href="#projects"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="px-8 py-3 bg-primary text-primary-foreground rounded-full font-medium hover:bg-primary/90 transition-colors duration-300"
           >
             View My Work
-          </motion.button>
+          </motion.a>
           
-          <motion.button
+          <motion.a
+            href="#contact"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="px-8 py-3 border border-primary text-primary rounded-full font-medium hover:bg-primary hover:text-primary-foreground transition-all duration-300"
           >
-            Download CV
-          </motion.button>
+            Let's Connect
+          </motion.a>
         </motion.div>
         
         <motion.div
@@ -113,13 +116,15 @@ const Hero = () => {
           className="flex justify-center space-x-6 mb-16"
         >
           {[
-            { icon: Github, href: '#', label: 'GitHub' },
-            { icon: Linkedin, href: '#', label: 'LinkedIn' },
-            { icon: Mail, href: '#', label: 'Email' },
+            { icon: Github, href: 'https://github.com/inciner8r', label: 'GitHub' },
+            { icon: Linkedin, href: 'https://www.linkedin.com/in/punarvpawade/', label: 'LinkedIn' },
+            { icon: Mail, href: 'mailto:punarvpawade17@gmail.com', label: 'Email' },
           ].map(({ icon: Icon, href, label }) => (
             <motion.a
               key={label}
               href={href}
+              target={href.startsWith('http') ? '_blank' : '_self'}
+              rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
               whileHover={{ scale: 1.2, y: -2 }}
               whileTap={{ scale: 0.9 }}
               className="p-3 glass rounded-full text-muted-foreground hover:text-primary transition-colors duration-300"

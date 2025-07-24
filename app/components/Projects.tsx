@@ -1,71 +1,74 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ExternalLink, Github, Calendar } from 'lucide-react';
+import { ExternalLink, Github, Calendar, Award, Zap } from 'lucide-react';
 
 const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: 'E-Commerce Platform',
-      description: 'A full-stack e-commerce solution with React, Node.js, and Stripe integration. Features include user authentication, product management, and real-time order tracking.',
+      title: 'PolyPass - Password Manager',
+      description: 'A decentralized password manager extension built for ETHGlobal 2023. Features encrypted password storage on Polybase with autofill functionality for secure password management across web applications.',
       image: '/api/placeholder/600/400',
-      technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
+      technologies: ['React', 'TypeScript', 'Polybase', 'Browser Extension'],
       liveUrl: '#',
       githubUrl: '#',
-      date: '2024',
-      featured: true
+      date: '2023',
+      featured: true,
+      award: 'ETHGlobal 2023 Participant'
     },
     {
       id: 2,
-      title: 'Task Management App',
-      description: 'A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.',
+      title: 'AirNFT - NFT Marketplace',
+      description: 'A comprehensive platform for launching NFT collections and gaming assets built on Aptos blockchain. Features full-stack development with smart contract integration and data indexing from Aptos Network.',
       image: '/api/placeholder/600/400',
-      technologies: ['Next.js', 'TypeScript', 'Prisma', 'Socket.io'],
+      technologies: ['ReactJS', 'Golang', 'Aptos', 'Smart Contracts'],
       liveUrl: '#',
       githubUrl: '#',
-      date: '2024',
-      featured: true
+      date: '2023',
+      featured: true,
+      award: 'Aptos RandomHack'
     },
     {
       id: 3,
-      title: 'Weather Dashboard',
-      description: 'A beautiful weather dashboard with location-based forecasts, interactive maps, and detailed analytics.',
+      title: 'GitSplit - Open Source Funding',
+      description: 'A crypto donation platform for open source projects with smart contract development for automatic fund splitting. Full-stack implementation with blockchain integration for transparent funding.',
       image: '/api/placeholder/600/400',
-      technologies: ['Vue.js', 'Express.js', 'Weather API', 'Chart.js'],
+      technologies: ['NextJS', 'Golang', 'Solidity', 'AWS', 'Docker'],
       liveUrl: '#',
       githubUrl: '#',
       date: '2023',
-      featured: false
+      featured: true
     },
     {
       id: 4,
-      title: 'Social Media Analytics',
-      description: 'A comprehensive analytics platform for social media metrics with data visualization and automated reporting.',
+      title: 'Virtue Gaming - On-chain Game',
+      description: 'An innovative on-chain bingo game built on Aptos blockchain with smart contract integration and automated gas payments for seamless gaming experience.',
       image: '/api/placeholder/600/400',
-      technologies: ['React', 'Python', 'FastAPI', 'D3.js'],
+      technologies: ['Aptos', 'Smart Contracts', 'Move Language'],
       liveUrl: '#',
       githubUrl: '#',
       date: '2023',
-      featured: false
+      featured: false,
+      award: 'Aptos RandomHack'
     },
     {
       id: 5,
-      title: 'Learning Management System',
-      description: 'An educational platform with course management, progress tracking, and interactive learning modules.',
+      title: 'Custom Linux Kernel',
+      description: 'Custom kernel development for Asus Zenfone Max Pro M1 with device driver integration, performance optimization, and automated compilation system.',
       image: '/api/placeholder/600/400',
-      technologies: ['Next.js', 'PostgreSQL', 'AWS', 'Redis'],
+      technologies: ['C', 'Makefile', 'Shell Scripting', 'Linux Kernel'],
       liveUrl: '#',
       githubUrl: '#',
-      date: '2023',
+      date: '2022',
       featured: false
     },
     {
       id: 6,
-      title: 'Portfolio Website',
-      description: 'A responsive portfolio website with modern animations, dark theme, and optimized performance.',
+      title: 'Erebrus - Auth Middleware',
+      description: 'Authentication middleware for gRPC endpoints with central gateway for VPN nodes and peer discovery using libp2p protocol.',
       image: '/api/placeholder/600/400',
-      technologies: ['Next.js', 'Tailwind CSS', 'Framer Motion'],
+      technologies: ['Golang', 'gRPC', 'libp2p', 'VPN'],
       liveUrl: '#',
       githubUrl: '#',
       date: '2024',
@@ -90,8 +93,8 @@ const Projects = () => {
             Featured Projects
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            A showcase of my recent work, featuring full-stack applications, 
-            web platforms, and creative solutions to real-world problems.
+            A showcase of my blockchain and full-stack development work, featuring hackathon winners, 
+            open-source contributions, and innovative solutions to real-world problems.
           </p>
         </motion.div>
 
@@ -141,6 +144,15 @@ const Projects = () => {
                 <div className="flex items-center space-x-2 mb-4">
                   <Calendar size={16} className="text-primary" />
                   <span className="text-sm text-muted-foreground">{project.date}</span>
+                  {project.award && (
+                    <>
+                      <div className="w-1 h-1 bg-muted-foreground rounded-full"></div>
+                      <div className="flex items-center space-x-1">
+                        <Award size={14} className="text-accent" />
+                        <span className="text-sm text-accent font-medium">{project.award}</span>
+                      </div>
+                    </>
+                  )}
                 </div>
                 
                 <h3 className="text-3xl font-bold mb-4 text-foreground">{project.title}</h3>
@@ -206,6 +218,12 @@ const Projects = () => {
                   <div className="flex items-center space-x-2">
                     <Calendar size={14} className="text-primary" />
                     <span className="text-sm text-muted-foreground">{project.date}</span>
+                    {project.award && (
+                      <>
+                        <div className="w-1 h-1 bg-muted-foreground rounded-full"></div>
+                        <Award size={12} className="text-accent" />
+                      </>
+                    )}
                   </div>
                   <div className="flex space-x-2">
                     <a
@@ -242,6 +260,47 @@ const Projects = () => {
                 </div>
               </motion.div>
             ))}
+          </div>
+        </motion.div>
+
+        {/* Call to Action */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="text-center"
+        >
+          <div className="glass p-8 rounded-2xl max-w-2xl mx-auto">
+            <div className="flex items-center justify-center mb-4">
+              <Zap className="w-8 h-8 text-primary mr-3" />
+              <h3 className="text-2xl font-bold text-foreground">Let's Build Something Amazing Together</h3>
+            </div>
+            <p className="text-muted-foreground mb-6 leading-relaxed">
+              I'm always open to discussing new opportunities, interesting projects, hackathons, 
+              or collaborating on open-source contributions. Let's create the next big thing!
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <motion.a
+                href="#contact"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-8 py-3 bg-primary text-primary-foreground rounded-full font-medium hover:bg-primary/90 transition-colors duration-300"
+              >
+                Get In Touch
+              </motion.a>
+              <motion.a
+                href="https://github.com/inciner8r"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="flex items-center space-x-2 px-8 py-3 border border-primary text-primary rounded-full font-medium hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+              >
+                <Github size={16} />
+                <span>View More Projects</span>
+              </motion.a>
+            </div>
           </div>
         </motion.div>
       </div>

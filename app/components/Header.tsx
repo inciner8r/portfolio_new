@@ -38,7 +38,7 @@ const Header = () => {
             transition={{ delay: 0.2 }}
             className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent"
           >
-            Portfolio
+            Punarv Pawade
           </motion.div>
           
           <motion.ul
