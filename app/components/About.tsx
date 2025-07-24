@@ -8,7 +8,7 @@ import {
   Heart,
   Globe,
   Users,
-  Coffee,
+  Gamepad2,
   Music,
 } from "lucide-react";
 
@@ -82,7 +82,7 @@ const About = () => {
 
   const interests = [
     { icon: Music, name: "Guitar & Music Production" },
-    { icon: Coffee, name: "Gaming" },
+    { icon: Gamepad2, name: "Gaming" },
     { icon: Heart, name: "Basketball & Football" },
     { icon: Code, name: "Arch Linux Enthusiast" },
   ];
