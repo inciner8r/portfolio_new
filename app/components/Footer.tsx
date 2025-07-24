@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Heart, ArrowUp } from 'lucide-react';
+import { Heart, ArrowUp, Github, Linkedin, Mail } from 'lucide-react';
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -19,9 +19,9 @@ const Footer = () => {
             viewport={{ once: true }}
             className="flex items-center space-x-2 text-muted-foreground mb-4 md:mb-0"
           >
-            <span>© 2024 Your Name. Made with</span>
+            <span>© 2024 Punarv Pawade. Made with</span>
             <Heart size={16} className="text-accent fill-current" />
-            <span>and lots of coffee.</span>
+            <span>and lots of code.</span>
           </motion.div>
 
           <motion.div
@@ -32,14 +32,22 @@ const Footer = () => {
             className="flex items-center space-x-6"
           >
             <nav className="flex space-x-6">
-              {['Privacy', 'Terms', 'Contact'].map((item) => (
-                <a
-                  key={item}
-                  href="#"
-                  className="text-muted-foreground hover:text-primary transition-colors duration-300"
+              {[
+                { name: 'GitHub', href: 'https://github.com/inciner8r', icon: Github },
+                { name: 'LinkedIn', href: 'https://www.linkedin.com/in/punarvpawade/', icon: Linkedin },
+                { name: 'Contact', href: '#contact', icon: Mail }
+              ].map((item) => (
+                <motion.a
+                  key={item.name}
+                  href={item.href}
+                  target={item.href.startsWith('http') ? '_blank' : '_self'}
+                  rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                  whileHover={{ scale: 1.1, y: -2 }}
+                  className="flex items-center space-x-1 text-muted-foreground hover:text-primary transition-colors duration-300"
                 >
-                  {item}
-                </a>
+                  <item.icon size={16} />
+                  <span className="hidden sm:inline">{item.name}</span>
+                </motion.a>
               ))}
             </nav>
             
@@ -54,6 +62,22 @@ const Footer = () => {
             </motion.button>
           </motion.div>
         </div>
+        
+        {/* Additional footer info */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="mt-8 pt-6 border-t border-border/30 text-center"
+        >
+          <p className="text-sm text-muted-foreground">
+            Software Engineer | Blockchain Developer | Open Source Advocate
+          </p>
+          <p className="text-xs text-muted-foreground mt-2">
+            Building the future with Golang, React, and Web3 technologies
+          </p>
+        </motion.div>
       </div>
     </footer>
   );
