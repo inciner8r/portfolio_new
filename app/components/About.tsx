@@ -195,7 +195,7 @@ const About = () => {
           <div className="mt-8 glass p-6 rounded-2xl max-w-2xl mx-auto">
             <p className="text-muted-foreground leading-relaxed">
               <strong className="text-foreground">Location:</strong> Maharashtra, India<br/>
-              <strong className="text-foreground">Education:</strong> BE Computer Engineering (8.68 CGPA)<br/>
+              <strong className="text-foreground">Education:</strong> BE Computer Engineering<br/>
               <strong className="text-foreground">Philosophy:</strong> I believe in the power of open-source software and enjoy experimenting with emerging technologies. Always eager to connect with like-minded developers and work on innovative projects that push the boundaries of technology.
             </p>
           </div>

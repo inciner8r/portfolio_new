@@ -248,7 +248,6 @@ const Experience = () => {
                 <h4 className="text-xl font-bold text-foreground">Education</h4>
               </div>
               <h5 className="text-lg font-semibold text-primary mb-2">BE Computer Engineering</h5>
-              <p className="text-muted-foreground mb-2">CGPA: 8.68</p>
               <p className="text-sm text-muted-foreground">Strong foundation in computer science fundamentals, algorithms, and software engineering principles.</p>
             </div>
             

@@ -19,7 +19,7 @@ const Footer = () => {
             viewport={{ once: true }}
             className="flex items-center space-x-2 text-muted-foreground mb-4 md:mb-0"
           >
-            <span>© 2024 Punarv Pawade. Made with</span>
+            <span>© 2025 Punarv Pawade. Made with</span>
             <Heart size={16} className="text-accent fill-current" />
             <span>and lots of code.</span>
           </motion.div>
