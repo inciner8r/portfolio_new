@@ -1,49 +1,80 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Send, Github, Linkedin, Globe, Code, Zap, Users } from 'lucide-react';
+import { motion } from "framer-motion";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Send,
+  Github,
+  Linkedin,
+  Globe,
+  Code,
+  Zap,
+  Users,
+  Twitter,
+  MessageCircle,
+} from "lucide-react";
 
 const Contact = () => {
   const contactInfo = [
     {
       icon: Mail,
-      label: 'Email',
-      value: 'punarvpawade17@gmail.com',
-      href: 'mailto:punarvpawade17@gmail.com'
+      label: "Email",
+      value: "punarvpawade17@gmail.com",
+      href: "mailto:punarvpawade17@gmail.com",
     },
     {
       icon: Globe,
-      label: 'Website',
-      value: 'www.punarv.dev',
-      href: 'https://www.punarv.dev/'
+      label: "Website",
+      value: "www.punarv.dev",
+      href: "https://www.punarv.dev/",
     },
     {
       icon: MapPin,
-      label: 'Location',
-      value: 'Maharashtra, India',
-      href: '#'
-    }
+      label: "Location",
+      value: "Maharashtra, India",
+      href: "#",
+    },
   ];
 
   const socialLinks = [
     {
       icon: Github,
-      label: 'GitHub',
-      href: 'https://github.com/inciner8r',
-      color: 'hover:text-primary'
+      label: "GitHub",
+      href: "https://github.com/inciner8r",
+      color: "hover:text-primary",
     },
     {
       icon: Linkedin,
-      label: 'LinkedIn',
-      href: 'https://www.linkedin.com/in/punarvpawade/',
-      color: 'hover:text-blue-400'
+      label: "LinkedIn",
+      href: "https://www.linkedin.com/in/punarvpawade/",
+      color: "hover:text-blue-400",
+    },
+    {
+      icon: Twitter,
+      label: "Twitter",
+      href: "https://x.com/inciner8rz",
+      color: "hover:text-blue-400",
+    },
+    {
+      icon: Send,
+      label: "Telegram",
+      href: "https://t.me/inciner8r",
+      color: "hover:text-sky-400",
+    },
+    {
+      icon: MessageCircle,
+      label: "Discord",
+      href: "https://discord.com/users/569047479140483082",
+      color: "hover:text-indigo-400",
     },
     {
       icon: Mail,
-      label: 'Email',
-      href: 'mailto:punarvpawade17@gmail.com',
-      color: 'hover:text-green-400'
-    }
+      label: "Email",
+      href: "mailto:punarvpawade17@gmail.com",
+      color: "hover:text-green-400",
+    },
   ];
 
   return (
@@ -60,8 +91,9 @@ const Contact = () => {
             Let's Connect
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Have a project in mind, want to collaborate on open-source, or just want to chat about blockchain and technology? 
-            I'd love to hear from you. Let's build something amazing together!
+            Have a project in mind, want to collaborate on open-source, or just
+            want to chat about blockchain and technology? I'd love to hear from
+            you. Let's build something amazing together!
           </p>
         </motion.div>
 
@@ -74,11 +106,16 @@ const Contact = () => {
             viewport={{ once: true }}
           >
             <div className="glass p-8 rounded-2xl">
-              <h3 className="text-2xl font-bold mb-6 text-foreground">Send a Message</h3>
+              <h3 className="text-2xl font-bold mb-6 text-foreground">
+                Send a Message
+              </h3>
               <form className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
-                    <label htmlFor="firstName" className="block text-sm font-medium mb-2 text-foreground">
+                    <label
+                      htmlFor="firstName"
+                      className="block text-sm font-medium mb-2 text-foreground"
+                    >
                       First Name
                     </label>
                     <input
@@ -90,7 +127,10 @@ const Contact = () => {
                     />
                   </div>
                   <div>
-                    <label htmlFor="lastName" className="block text-sm font-medium mb-2 text-foreground">
+                    <label
+                      htmlFor="lastName"
+                      className="block text-sm font-medium mb-2 text-foreground"
+                    >
                       Last Name
                     </label>
                     <input
@@ -102,9 +142,12 @@ const Contact = () => {
                     />
                   </div>
                 </div>
-                
+
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium mb-2 text-foreground">
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-medium mb-2 text-foreground"
+                  >
                     Email Address
                   </label>
                   <input
@@ -115,9 +158,12 @@ const Contact = () => {
                     placeholder="john@example.com"
                   />
                 </div>
-                
+
                 <div>
-                  <label htmlFor="subject" className="block text-sm font-medium mb-2 text-foreground">
+                  <label
+                    htmlFor="subject"
+                    className="block text-sm font-medium mb-2 text-foreground"
+                  >
                     Subject
                   </label>
                   <input
@@ -128,9 +174,12 @@ const Contact = () => {
                     placeholder="Project Collaboration / Hackathon / Open Source"
                   />
                 </div>
-                
+
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium mb-2 text-foreground">
+                  <label
+                    htmlFor="message"
+                    className="block text-sm font-medium mb-2 text-foreground"
+                  >
                     Message
                   </label>
                   <textarea
@@ -141,7 +190,7 @@ const Contact = () => {
                     placeholder="Tell me about your project, collaboration idea, or just say hello..."
                   ></textarea>
                 </div>
-                
+
                 <motion.button
                   type="submit"
                   whileHover={{ scale: 1.02 }}
@@ -164,14 +213,20 @@ const Contact = () => {
             className="space-y-8"
           >
             <div>
-              <h3 className="text-2xl font-bold mb-6 text-foreground">Contact Information</h3>
+              <h3 className="text-2xl font-bold mb-6 text-foreground">
+                Contact Information
+              </h3>
               <div className="space-y-4">
                 {contactInfo.map((info, index) => (
                   <motion.a
                     key={info.label}
                     href={info.href}
-                    target={info.href.startsWith('http') ? '_blank' : '_self'}
-                    rel={info.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                    target={info.href.startsWith("http") ? "_blank" : "_self"}
+                    rel={
+                      info.href.startsWith("http")
+                        ? "noopener noreferrer"
+                        : undefined
+                    }
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -183,8 +238,12 @@ const Contact = () => {
                       <info.icon className="w-5 h-5 text-primary" />
                     </div>
                     <div>
-                      <p className="text-sm text-muted-foreground">{info.label}</p>
-                      <p className="text-foreground font-medium">{info.value}</p>
+                      <p className="text-sm text-muted-foreground">
+                        {info.label}
+                      </p>
+                      <p className="text-foreground font-medium">
+                        {info.value}
+                      </p>
                     </div>
                   </motion.a>
                 ))}
@@ -192,7 +251,9 @@ const Contact = () => {
             </div>
 
             <div>
-              <h3 className="text-2xl font-bold mb-6 text-foreground">Connect With Me</h3>
+              <h3 className="text-2xl font-bold mb-6 text-foreground">
+                Connect With Me
+              </h3>
               <div className="flex space-x-4">
                 {socialLinks.map((social, index) => (
                   <motion.a
@@ -216,18 +277,22 @@ const Contact = () => {
             </div>
 
             <div className="glass p-6 rounded-2xl">
-              <h4 className="text-lg font-semibold mb-4 text-foreground">Let's Build Something Amazing Together</h4>
+              <h4 className="text-lg font-semibold mb-4 text-foreground">
+                Let's Build Something Amazing Together
+              </h4>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                I'm currently available for exciting projects and collaborations. Whether you're working on 
-                blockchain applications, full-stack development, or innovative open-source projects, 
-                I'd love to contribute and help bring your ideas to life.
+                I'm currently available for exciting projects and
+                collaborations. Whether you're working on blockchain
+                applications, full-stack development, or innovative open-source
+                projects, I'd love to contribute and help bring your ideas to
+                life.
               </p>
               <div className="flex flex-wrap gap-2">
                 {[
-                  { icon: Code, name: 'Full-Stack Development' },
-                  { icon: Zap, name: 'Blockchain & Web3' },
-                  { icon: Users, name: 'Open Source' },
-                  { icon: Globe, name: 'Hackathons' }
+                  { icon: Code, name: "Full-Stack Development" },
+                  { icon: Zap, name: "Blockchain & Web3" },
+                  { icon: Users, name: "Open Source" },
+                  { icon: Globe, name: "Hackathons" },
                 ].map((service) => (
                   <span
                     key={service.name}
@@ -242,9 +307,12 @@ const Contact = () => {
 
             {/* Call to Action */}
             <div className="glass p-6 rounded-2xl border border-accent/20">
-              <h4 className="text-lg font-semibold mb-3 text-foreground">Quick Connect</h4>
+              <h4 className="text-lg font-semibold mb-3 text-foreground">
+                Quick Connect
+              </h4>
               <p className="text-sm text-muted-foreground mb-4">
-                Prefer a quick chat? Feel free to reach out directly through any of these channels:
+                Prefer a quick chat? Feel free to reach out directly through any
+                of these channels:
               </p>
               <div className="space-y-2">
                 <motion.a
@@ -253,7 +321,9 @@ const Contact = () => {
                   className="flex items-center space-x-2 p-2 rounded-lg hover:bg-primary/5 transition-colors"
                 >
                   <Mail size={16} className="text-primary" />
-                  <span className="text-sm text-foreground">Email for project discussions</span>
+                  <span className="text-sm text-foreground">
+                    Email for project discussions
+                  </span>
                 </motion.a>
                 <motion.a
                   href="https://www.linkedin.com/in/punarvpawade/"
@@ -263,7 +333,45 @@ const Contact = () => {
                   className="flex items-center space-x-2 p-2 rounded-lg hover:bg-primary/5 transition-colors"
                 >
                   <Linkedin size={16} className="text-primary" />
-                  <span className="text-sm text-foreground">LinkedIn for professional networking</span>
+                  <span className="text-sm text-foreground">
+                    LinkedIn for professional networking
+                  </span>
+                </motion.a>
+                <motion.a
+                  href="https://x.com/inciner8rz"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.02 }}
+                  className="flex items-center space-x-2 p-2 rounded-lg hover:bg-primary/5 transition-colors"
+                >
+                  <Twitter size={16} className="text-primary" />
+                  <span className="text-sm text-foreground">
+                    Twitter for updates & DMs
+                  </span>
+                </motion.a>
+                <motion.a
+                  href="https://t.me/inciner8r"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.02 }}
+                  className="flex items-center space-x-2 p-2 rounded-lg hover:bg-primary/5 transition-colors"
+                >
+                  <Send size={16} className="text-primary" />
+                  <span className="text-sm text-foreground">
+                    Telegram for quick chat
+                  </span>
+                </motion.a>
+                <motion.a
+                  href="https://discord.com/users/569047479140483082"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.02 }}
+                  className="flex items-center space-x-2 p-2 rounded-lg hover:bg-primary/5 transition-colors"
+                >
+                  <MessageCircle size={16} className="text-primary" />
+                  <span className="text-sm text-foreground">
+                    Discord for community & collab
+                  </span>
                 </motion.a>
                 <motion.a
                   href="https://github.com/inciner8r"
@@ -273,7 +381,9 @@ const Contact = () => {
                   className="flex items-center space-x-2 p-2 rounded-lg hover:bg-primary/5 transition-colors"
                 >
                   <Github size={16} className="text-primary" />
-                  <span className="text-sm text-foreground">GitHub for code collaboration</span>
+                  <span className="text-sm text-foreground">
+                    GitHub for code collaboration
+                  </span>
                 </motion.a>
               </div>
             </div>
