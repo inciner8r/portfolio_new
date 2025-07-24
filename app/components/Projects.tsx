@@ -10,10 +10,10 @@ const Projects = () => {
       title: "PolyPass - Password Manager",
       description:
         "A decentralized password manager extension built for ETHGlobal 2023. Features encrypted password storage on Polybase with autofill functionality for secure password management across web applications.",
-      image: "/api/placeholder/600/400",
+      image: "/polypass.png",
       technologies: ["React", "TypeScript", "Polybase", "Browser Extension"],
       liveUrl: "https://ethglobal.com/showcase/polypass-fg8ru",
-      githubUrl: "#",
+      githubUrl: "https://github.com/a-org-b/Poly-Pass-Extension",
       date: "2023",
       featured: true,
       award: "ETHGlobal 2023 Participant",
@@ -36,11 +36,10 @@ const Projects = () => {
       title: "GitSplit - Open Source Funding",
       description:
         "A crypto donation platform for open source projects with smart contract development for automatic fund splitting. Full-stack implementation with blockchain integration for transparent funding.",
-      image:
-        "https://ethglobal.b-cdn.net/projects/pkp5d/screenshots/hqj68/default.jpg",
+      image: "/gitpslit.png",
       technologies: ["NextJS", "Golang", "Solidity", "AWS", "Docker"],
       liveUrl: "https://ethglobal.com/showcase/gitsplit-pkp5d",
-      githubUrl: "#",
+      githubUrl: "https://github.com/orgs/GitSplit-org/repositories",
       date: "2023",
       featured: true,
     },
