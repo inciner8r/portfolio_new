@@ -1,11 +1,20 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import { Heart, ArrowUp, Github, Linkedin, Mail } from 'lucide-react';
+import { motion } from "framer-motion";
+import {
+  Heart,
+  ArrowUp,
+  Github,
+  Linkedin,
+  Mail,
+  Twitter,
+  Send,
+  MessageCircle,
+} from "lucide-react";
 
 const Footer = () => {
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
@@ -33,15 +42,42 @@ const Footer = () => {
           >
             <nav className="flex space-x-6">
               {[
-                { name: 'GitHub', href: 'https://github.com/inciner8r', icon: Github },
-                { name: 'LinkedIn', href: 'https://www.linkedin.com/in/punarvpawade/', icon: Linkedin },
-                { name: 'Contact', href: '#contact', icon: Mail }
+                {
+                  name: "GitHub",
+                  href: "https://github.com/inciner8r",
+                  icon: Github,
+                },
+                {
+                  name: "LinkedIn",
+                  href: "https://www.linkedin.com/in/punarvpawade/",
+                  icon: Linkedin,
+                },
+                {
+                  name: "Twitter",
+                  href: "https://x.com/inciner8rz",
+                  icon: Twitter,
+                },
+                {
+                  name: "Telegram",
+                  href: "https://t.me/inciner8r",
+                  icon: Send,
+                },
+                {
+                  name: "Discord",
+                  href: "https://discord.com/users/569047479140483082",
+                  icon: MessageCircle,
+                },
+                { name: "Contact", href: "#contact", icon: Mail },
               ].map((item) => (
                 <motion.a
                   key={item.name}
                   href={item.href}
-                  target={item.href.startsWith('http') ? '_blank' : '_self'}
-                  rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                  target={item.href.startsWith("http") ? "_blank" : "_self"}
+                  rel={
+                    item.href.startsWith("http")
+                      ? "noopener noreferrer"
+                      : undefined
+                  }
                   whileHover={{ scale: 1.1, y: -2 }}
                   className="flex items-center space-x-1 text-muted-foreground hover:text-primary transition-colors duration-300"
                 >
@@ -50,7 +86,7 @@ const Footer = () => {
                 </motion.a>
               ))}
             </nav>
-            
+
             <motion.button
               onClick={scrollToTop}
               whileHover={{ scale: 1.1, y: -2 }}
@@ -62,7 +98,7 @@ const Footer = () => {
             </motion.button>
           </motion.div>
         </div>
-        
+
         {/* Additional footer info */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}

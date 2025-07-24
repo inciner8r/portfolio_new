@@ -1,7 +1,15 @@
 "use client";
 
 import { motion, circOut } from "framer-motion";
-import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
+import {
+  ArrowDown,
+  Github,
+  Linkedin,
+  Mail,
+  Twitter,
+  Send,
+  MessageCircle,
+} from "lucide-react";
 import Image from "next/image";
 
 const Hero = () => {
@@ -149,6 +157,17 @@ const Hero = () => {
               icon: Linkedin,
               href: "https://www.linkedin.com/in/punarvpawade/",
               label: "LinkedIn",
+            },
+            {
+              icon: Twitter,
+              href: "https://x.com/inciner8rz",
+              label: "Twitter",
+            },
+            { icon: Send, href: "https://t.me/inciner8r", label: "Telegram" },
+            {
+              icon: MessageCircle,
+              href: "https://discord.com/users/569047479140483082",
+              label: "Discord",
             },
             {
               icon: Mail,

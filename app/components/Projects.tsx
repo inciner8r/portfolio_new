@@ -7,6 +7,18 @@ import { Twitter, Send, MessageCircle } from "lucide-react";
 const Projects = () => {
   const projects = [
     {
+      id: 3,
+      title: "GitSplit - Open Source Funding",
+      description:
+        "A crypto donation platform for open source projects with smart contract development for automatic fund splitting. Full-stack implementation with blockchain integration for transparent funding.",
+      image: "/gitpslit.png",
+      technologies: ["NextJS", "Golang", "Solidity", "AWS", "Docker"],
+      liveUrl: "https://ethglobal.com/showcase/gitsplit-pkp5d",
+      githubUrl: "https://github.com/orgs/GitSplit-org/repositories",
+      date: "2023",
+      featured: true,
+    },
+    {
       id: 1,
       title: "PolyPass - Password Manager",
       description:
@@ -31,18 +43,6 @@ const Projects = () => {
       date: "2023",
       featured: false,
       award: "Aptos RandomHack",
-    },
-    {
-      id: 3,
-      title: "GitSplit - Open Source Funding",
-      description:
-        "A crypto donation platform for open source projects with smart contract development for automatic fund splitting. Full-stack implementation with blockchain integration for transparent funding.",
-      image: "/gitpslit.png",
-      technologies: ["NextJS", "Golang", "Solidity", "AWS", "Docker"],
-      liveUrl: "https://ethglobal.com/showcase/gitsplit-pkp5d",
-      githubUrl: "https://github.com/orgs/GitSplit-org/repositories",
-      date: "2023",
-      featured: true,
     },
     {
       id: 4,
@@ -330,39 +330,6 @@ const Projects = () => {
               >
                 <Github size={16} />
                 <span>View More Projects</span>
-              </motion.a>
-              <motion.a
-                href="https://x.com/inciner8rz"
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="flex items-center space-x-2 px-8 py-3 border border-primary text-primary rounded-full font-medium hover:bg-primary hover:text-primary-foreground transition-all duration-300"
-              >
-                <Twitter size={16} />
-                <span>Twitter</span>
-              </motion.a>
-              <motion.a
-                href="https://t.me/inciner8r"
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="flex items-center space-x-2 px-8 py-3 border border-primary text-primary rounded-full font-medium hover:bg-primary hover:text-primary-foreground transition-all duration-300"
-              >
-                <Send size={16} />
-                <span>Telegram</span>
-              </motion.a>
-              <motion.a
-                href="https://discord.com/users/569047479140483082"
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="flex items-center space-x-2 px-8 py-3 border border-primary text-primary rounded-full font-medium hover:bg-primary hover:text-primary-foreground transition-all duration-300"
-              >
-                <MessageCircle size={16} />
-                <span>Discord</span>
               </motion.a>
             </div>
           </div>
