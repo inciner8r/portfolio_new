@@ -2,6 +2,7 @@
 
 import { motion, circOut } from 'framer-motion';
 import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
+import Image from 'next/image';
 
 const Hero = () => {
   const containerVariants = {
@@ -61,6 +62,23 @@ const Hero = () => {
         animate="visible"
         className="max-w-4xl mx-auto px-6 text-center relative z-10"
       >
+        {/* Avatar */}
+        <motion.div variants={itemVariants} className="mb-8">
+          <div className="relative w-32 h-32 mx-auto mb-6">
+            <Image
+              src="/avatar.jpg"
+              alt="Punarv Pawade"
+              fill
+              className="rounded-full object-cover border-4 border-primary/20 shadow-lg"
+              priority
+              onError={(e) => {
+                // Fallback to a default avatar if image doesn't exist
+                e.currentTarget.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTI4IiBoZWlnaHQ9IjEyOCIgdmlld0JveD0iMCAwIDEyOCAxMjgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxMjgiIGhlaWdodD0iMTI4IiByeD0iNjQiIGZpbGw9IiNGM0Y0RjYiLz4KPHN2ZyB4PSIzMiIgeT0iMzIiIHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM2Mzc0OEUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj4KPHN2ZyB4PSIzMiIgeT0iMzIiIHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM2Mzc0OEUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj4KPHN2ZyB4PSIzMiIgeT0iMzIiIHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM2Mzc0OEUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj4KPHBhdGggZD0iTTIwIDIxdi0yYTQgNCAwIDAgMC00LTRIOGE0IDQgMCAwIDAtNCA0djIiLz4KPGNpcmNsZSBjeD0iMTIiIGN5PSI3IiByPSI0Ii8+Cjwvc3ZnPgo8L3N2Zz4KPC9zdmc+';
+              }}
+            />
+          </div>
+        </motion.div>
+
         <motion.div variants={itemVariants} className="mb-6">
           <span className="text-primary text-lg font-medium">Hello, I'm</span>
         </motion.div>
