@@ -1,83 +1,78 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import { ExternalLink, Github, Calendar, Award, Zap } from 'lucide-react';
+import { motion } from "framer-motion";
+import { ExternalLink, Github, Calendar, Award, Zap } from "lucide-react";
 
 const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: 'PolyPass - Password Manager',
-      description: 'A decentralized password manager extension built for ETHGlobal 2023. Features encrypted password storage on Polybase with autofill functionality for secure password management across web applications.',
-      image: '/api/placeholder/600/400',
-      technologies: ['React', 'TypeScript', 'Polybase', 'Browser Extension'],
-      liveUrl: '#',
-      githubUrl: '#',
-      date: '2023',
+      title: "PolyPass - Password Manager",
+      description:
+        "A decentralized password manager extension built for ETHGlobal 2023. Features encrypted password storage on Polybase with autofill functionality for secure password management across web applications.",
+      image: "/api/placeholder/600/400",
+      technologies: ["React", "TypeScript", "Polybase", "Browser Extension"],
+      liveUrl: "https://ethglobal.com/showcase/polypass-fg8ru",
+      githubUrl: "#",
+      date: "2023",
       featured: true,
-      award: 'ETHGlobal 2023 Participant'
+      award: "ETHGlobal 2023 Participant",
     },
     {
       id: 2,
-      title: 'AirNFT - NFT Marketplace',
-      description: 'A comprehensive platform for launching NFT collections and gaming assets built on Aptos blockchain. Features full-stack development with smart contract integration and data indexing from Aptos Network.',
-      image: '/api/placeholder/600/400',
-      technologies: ['ReactJS', 'Golang', 'Aptos', 'Smart Contracts'],
-      liveUrl: '#',
-      githubUrl: '#',
-      date: '2023',
-      featured: true,
-      award: 'Aptos RandomHack'
+      title: "AirNFT - NFT Marketplace",
+      description:
+        "A comprehensive platform for launching NFT collections and gaming assets built on Aptos blockchain. Features full-stack development with smart contract integration and data indexing from Aptos Network.",
+      image: "/api/placeholder/600/400",
+      technologies: ["ReactJS", "Golang", "Aptos", "Smart Contracts"],
+      liveUrl: "#",
+      githubUrl: "#",
+      date: "2023",
+      featured: false,
+      award: "Aptos RandomHack",
     },
     {
       id: 3,
-      title: 'GitSplit - Open Source Funding',
-      description: 'A crypto donation platform for open source projects with smart contract development for automatic fund splitting. Full-stack implementation with blockchain integration for transparent funding.',
-      image: '/api/placeholder/600/400',
-      technologies: ['NextJS', 'Golang', 'Solidity', 'AWS', 'Docker'],
-      liveUrl: '#',
-      githubUrl: '#',
-      date: '2023',
-      featured: true
+      title: "GitSplit - Open Source Funding",
+      description:
+        "A crypto donation platform for open source projects with smart contract development for automatic fund splitting. Full-stack implementation with blockchain integration for transparent funding.",
+      image:
+        "https://ethglobal.b-cdn.net/projects/pkp5d/screenshots/hqj68/default.jpg",
+      technologies: ["NextJS", "Golang", "Solidity", "AWS", "Docker"],
+      liveUrl: "https://ethglobal.com/showcase/gitsplit-pkp5d",
+      githubUrl: "#",
+      date: "2023",
+      featured: true,
     },
     {
       id: 4,
-      title: 'Virtue Gaming - On-chain Game',
-      description: 'An innovative on-chain bingo game built on Aptos blockchain with smart contract integration and automated gas payments for seamless gaming experience.',
-      image: '/api/placeholder/600/400',
-      technologies: ['Aptos', 'Smart Contracts', 'Move Language'],
-      liveUrl: '#',
-      githubUrl: '#',
-      date: '2023',
+      title: "Virtue Gaming - On-chain Game",
+      description:
+        "An innovative on-chain bingo game built on Aptos blockchain with smart contract integration and automated gas payments for seamless gaming experience.",
+      image: "/api/placeholder/600/400",
+      technologies: ["Aptos", "Smart Contracts", "Move Language"],
+      liveUrl: "#",
+      githubUrl: "#",
+      date: "2023",
       featured: false,
-      award: 'Aptos RandomHack'
+      award: "Aptos RandomHack",
     },
     {
       id: 5,
-      title: 'Custom Linux Kernel',
-      description: 'Custom kernel development for Asus Zenfone Max Pro M1 with device driver integration, performance optimization, and automated compilation system.',
-      image: '/api/placeholder/600/400',
-      technologies: ['C', 'Makefile', 'Shell Scripting', 'Linux Kernel'],
-      liveUrl: '#',
-      githubUrl: '#',
-      date: '2022',
-      featured: false
+      title: "Custom Linux Kernel",
+      description:
+        "Custom kernel development for Asus Zenfone Max Pro M1 with device driver integration, performance optimization, and automated compilation system.",
+      image: "/api/placeholder/600/400",
+      technologies: ["C", "Makefile", "Shell Scripting", "Linux Kernel"],
+      liveUrl: "#",
+      githubUrl: "https://github.com/inciner8r/msm-4.4",
+      date: "2022",
+      featured: false,
     },
-    {
-      id: 6,
-      title: 'Erebrus - Auth Middleware',
-      description: 'Authentication middleware for gRPC endpoints with central gateway for VPN nodes and peer discovery using libp2p protocol.',
-      image: '/api/placeholder/600/400',
-      technologies: ['Golang', 'gRPC', 'libp2p', 'VPN'],
-      liveUrl: '#',
-      githubUrl: '#',
-      date: '2024',
-      featured: false
-    }
   ];
 
-  const featuredProjects = projects.filter(project => project.featured);
-  const otherProjects = projects.filter(project => !project.featured);
+  const featuredProjects = projects.filter((project) => project.featured);
+  const otherProjects = projects.filter((project) => !project.featured);
 
   return (
     <section id="projects" className="py-20 px-6">
@@ -93,8 +88,9 @@ const Projects = () => {
             Featured Projects
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            A showcase of my blockchain and full-stack development work, featuring hackathon winners, 
-            open-source contributions, and innovative solutions to real-world problems.
+            A showcase of my blockchain and full-stack development work,
+            featuring hackathon winners, open-source contributions, and
+            innovative solutions to real-world problems.
           </p>
         </motion.div>
 
@@ -108,16 +104,18 @@ const Projects = () => {
               transition={{ duration: 0.8, delay: index * 0.2 }}
               viewport={{ once: true }}
               className={`grid lg:grid-cols-2 gap-12 items-center ${
-                index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''
+                index % 2 === 1 ? "lg:grid-flow-col-dense" : ""
               }`}
             >
-              <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
+              <div className={index % 2 === 1 ? "lg:col-start-2" : ""}>
                 <motion.div
                   whileHover={{ scale: 1.02 }}
                   className="relative group overflow-hidden rounded-2xl"
                 >
                   <div className="aspect-video bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl flex items-center justify-center">
-                    <span className="text-muted-foreground">Project Screenshot</span>
+                    <span className="text-muted-foreground">
+                      Project Screenshot
+                    </span>
                   </div>
                   <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-4">
                     <motion.a
@@ -139,25 +137,37 @@ const Projects = () => {
                   </div>
                 </motion.div>
               </div>
-              
-              <div className={index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}>
+
+              <div
+                className={
+                  index % 2 === 1 ? "lg:col-start-1 lg:row-start-1" : ""
+                }
+              >
                 <div className="flex items-center space-x-2 mb-4">
                   <Calendar size={16} className="text-primary" />
-                  <span className="text-sm text-muted-foreground">{project.date}</span>
+                  <span className="text-sm text-muted-foreground">
+                    {project.date}
+                  </span>
                   {project.award && (
                     <>
                       <div className="w-1 h-1 bg-muted-foreground rounded-full"></div>
                       <div className="flex items-center space-x-1">
                         <Award size={14} className="text-accent" />
-                        <span className="text-sm text-accent font-medium">{project.award}</span>
+                        <span className="text-sm text-accent font-medium">
+                          {project.award}
+                        </span>
                       </div>
                     </>
                   )}
                 </div>
-                
-                <h3 className="text-3xl font-bold mb-4 text-foreground">{project.title}</h3>
-                <p className="text-muted-foreground mb-6 leading-relaxed">{project.description}</p>
-                
+
+                <h3 className="text-3xl font-bold mb-4 text-foreground">
+                  {project.title}
+                </h3>
+                <p className="text-muted-foreground mb-6 leading-relaxed">
+                  {project.description}
+                </p>
+
                 <div className="flex flex-wrap gap-2 mb-6">
                   {project.technologies.map((tech) => (
                     <span
@@ -168,7 +178,7 @@ const Projects = () => {
                     </span>
                   ))}
                 </div>
-                
+
                 <div className="flex space-x-4">
                   <motion.a
                     href={project.liveUrl}
@@ -202,7 +212,9 @@ const Projects = () => {
           viewport={{ once: true }}
           className="mb-12"
         >
-          <h3 className="text-3xl font-bold text-center mb-12 text-foreground">Other Projects</h3>
+          <h3 className="text-3xl font-bold text-center mb-12 text-foreground">
+            Other Projects
+          </h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {otherProjects.map((project, index) => (
               <motion.div
@@ -217,7 +229,9 @@ const Projects = () => {
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center space-x-2">
                     <Calendar size={14} className="text-primary" />
-                    <span className="text-sm text-muted-foreground">{project.date}</span>
+                    <span className="text-sm text-muted-foreground">
+                      {project.date}
+                    </span>
                     {project.award && (
                       <>
                         <div className="w-1 h-1 bg-muted-foreground rounded-full"></div>
@@ -240,14 +254,14 @@ const Projects = () => {
                     </a>
                   </div>
                 </div>
-                
+
                 <h4 className="text-xl font-semibold mb-3 text-foreground group-hover:text-primary transition-colors">
                   {project.title}
                 </h4>
                 <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
                   {project.description}
                 </p>
-                
+
                 <div className="flex flex-wrap gap-2">
                   {project.technologies.map((tech) => (
                     <span
@@ -274,11 +288,14 @@ const Projects = () => {
           <div className="glass p-8 rounded-2xl max-w-2xl mx-auto">
             <div className="flex items-center justify-center mb-4">
               <Zap className="w-8 h-8 text-primary mr-3" />
-              <h3 className="text-2xl font-bold text-foreground">Let's Build Something Amazing Together</h3>
+              <h3 className="text-2xl font-bold text-foreground">
+                Let's Build Something Amazing Together
+              </h3>
             </div>
             <p className="text-muted-foreground mb-6 leading-relaxed">
-              I'm always open to discussing new opportunities, interesting projects, hackathons, 
-              or collaborating on open-source contributions. Let's create the next big thing!
+              I'm always open to discussing new opportunities, interesting
+              projects, hackathons, or collaborating on open-source
+              contributions. Let's create the next big thing!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.a
