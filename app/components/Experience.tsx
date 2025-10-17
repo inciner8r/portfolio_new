@@ -12,16 +12,17 @@ const Experience = () => {
       location: 'Remote',
       duration: 'Dec 2024 - Present',
       type: 'Full-time',
-      description: 'Working on multi-tenant, multi-domain frontend applications with Next.js and Python backend. Focusing on storefront development, API optimization, webhook management, and solving scaling issues for high-traffic applications.',
+      description: 'Working on multi-tenant, multi-domain frontend applications with Next.js and Python backend. Focusing on storefront development, API optimization, webhook management, AI tooling integration, and solving scaling issues for high-traffic applications.',
       achievements: [
         'Developed multi-tenant, multi-domain frontend storefront using Next.js',
         'Built and optimized Python backend APIs and webhooks for better performance',
+        'Integrated AI tooling using AI SDK, LangGraph, and LangChain for enhanced functionality',
         'Solved critical scaling issues for high-traffic applications',
         'Optimized Sun Motors site cron jobs handling >1.5 lakh vehicle records',
         'Implemented ML-based recommendation system for enhanced user experience',
         'Managed cloud infrastructure on AWS and Hetzner/Coolify platforms'
       ],
-      technologies: ['Next.js', 'Python', 'AWS', 'Hetzner', 'Coolify', 'Machine Learning', 'Multi-tenant Architecture'],
+      technologies: ['Next.js', 'Python', 'AI SDK', 'LangGraph', 'LangChain', 'AWS', 'Hetzner', 'Coolify', 'Machine Learning', 'Multi-tenant Architecture'],
       website: '#',
       projects: [
         {
@@ -76,17 +77,18 @@ const Experience = () => {
       company: 'Lazarus Network',
       position: 'Developer Intern → Full Stack Developer',
       location: 'Remote',
-      duration: 'Apr 2023 - Present',
+      duration: 'Apr 2023 - May 2024',
       type: 'Full-time',
-      description: 'Started as Developer Intern and promoted to Full Stack Developer. Responsible for backend development in Golang and Node.js, frontend with NextJS and ReactJS, and managing cloud infrastructure.',
+      description: 'Started as Developer Intern and promoted to Full Stack Developer. Responsible for backend development in Golang and Node.js, frontend with NextJS and ReactJS, blockchain integrations in dApps, and managing cloud infrastructure.',
       achievements: [
         'Promoted from intern to full-time developer within the organization',
         'Built Erebrus: Authentication middleware for gRPC endpoints with central gateway',
         'Developed Sotreus: VPN+Firewall deployment with Ethereum/Aptos wallet auth',
-        'Created Myriadflow: Complete backend for launchpad/marketplace with smart contracts',
-        'Built Airbot: Discord bot with Midjourney, DALLE2, and ChatGPT integration'
+        'Created Myriadflow: Complete backend for launchpad/marketplace with blockchain integrations',
+        'Built Airbot: Discord bot with Midjourney, DALLE2, and ChatGPT integration',
+        'Worked on blockchain integrations in dApps rather than direct smart contract development'
       ],
-      technologies: ['Golang', 'Node.js', 'NextJS', 'ReactJS', 'AWS EC2', 'Google Cloud', 'Docker', 'GitHub Actions', 'gRPC', 'libp2p', 'Stripe'],
+      technologies: ['Golang', 'Node.js', 'NextJS', 'ReactJS', 'AWS EC2', 'Google Cloud', 'Docker', 'GitHub Actions', 'gRPC', 'libp2p', 'Stripe', 'Web3', 'Blockchain Integrations'],
       website: '#',
       projects: [
         {
@@ -99,7 +101,7 @@ const Experience = () => {
         },
         {
           name: 'Myriadflow',
-          description: 'Complete backend for launchpad/marketplace, smart contract deployments, subgraph deployment'
+          description: 'Complete backend for launchpad/marketplace with blockchain integrations and dApp connectivity'
         },
         {
           name: 'Airbot',
