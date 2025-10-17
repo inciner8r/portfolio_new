@@ -120,10 +120,10 @@ const Footer = () => {
           className="mt-8 pt-6 border-t border-border/30 text-center"
         >
           <p className="text-sm text-muted-foreground">
-            Software Engineer | Blockchain Developer | Open Source Advocate
+            Software Engineer | AI & Web3 Integrations | Open Source Advocate
           </p>
           <p className="text-xs text-muted-foreground mt-2">
-            Building the future with Golang, React, and Web3 technologies
+            Building with Golang, React, AI agents, and Web3 integrations
           </p>
         </motion.div>
       </div>

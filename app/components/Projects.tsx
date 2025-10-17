@@ -88,7 +88,7 @@ const Projects = () => {
             Featured Projects
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Blockchain and full-stack development work featuring hackathon winners and innovative solutions.
+            Selected work across AI agents/workflows, Web3 integrations, and full-stack engineering.
           </p>
         </motion.div>
 
