@@ -75,146 +75,122 @@ const Projects = () => {
   const otherProjects = projects.filter((project) => !project.featured);
 
   return (
-    <section id="projects" className="py-20 px-6">
-      <div className="max-w-6xl mx-auto">
+    <section id="projects" className="py-16 px-6">
+      <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
             Featured Projects
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            A showcase of my blockchain and full-stack development work,
-            featuring hackathon winners, open-source contributions, and
-            innovative solutions to real-world problems.
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            Blockchain and full-stack development work featuring hackathon winners and innovative solutions.
           </p>
         </motion.div>
 
-        {/* Featured Projects */}
-        <div className="space-y-20 mb-20">
+        {/* Featured Projects - Compact Grid */}
+        <div className="grid lg:grid-cols-2 gap-8 mb-16">
           {featuredProjects.map((project, index) => (
             <motion.div
               key={project.id}
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.2 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className={`grid lg:grid-cols-2 gap-12 items-center ${
-                index % 2 === 1 ? "lg:grid-flow-col-dense" : ""
-              }`}
+              className="glass p-6 rounded-2xl hover:border-primary/20 transition-all duration-300"
             >
-              <div className={index % 2 === 1 ? "lg:col-start-2" : ""}>
-                <motion.div
-                  whileHover={{ scale: 1.02 }}
-                  className="relative group overflow-hidden rounded-2xl"
-                >
-                  <div className="aspect-video bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl flex items-center justify-center overflow-hidden">
-                    <img
-                      src={project.image}
-                      alt={project.title + " screenshot"}
-                      className="object-cover w-full h-full"
-                    />
-                  </div>
-                  <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-4">
-                    <motion.a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.9 }}
-                      className="p-3 bg-primary rounded-full text-primary-foreground hover:bg-primary/90 transition-colors"
-                    >
-                      <ExternalLink size={20} />
-                    </motion.a>
-                    <motion.a
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.9 }}
-                      className="p-3 bg-card rounded-full text-card-foreground hover:bg-card/90 transition-colors"
-                    >
-                      <Github size={20} />
-                    </motion.a>
-                  </div>
-                </motion.div>
-              </div>
-
-              <div
-                className={
-                  index % 2 === 1 ? "lg:col-start-1 lg:row-start-1" : ""
-                }
-              >
-                <div className="flex items-center space-x-2 mb-4">
-                  <Calendar size={16} className="text-primary" />
+              <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center space-x-2">
+                  <Calendar size={14} className="text-primary" />
                   <span className="text-sm text-muted-foreground">
                     {project.date}
                   </span>
                   {project.award && (
                     <>
                       <div className="w-1 h-1 bg-muted-foreground rounded-full"></div>
-                      <div className="flex items-center space-x-1">
-                        <Award size={14} className="text-accent" />
-                        <span className="text-sm text-accent font-medium">
-                          {project.award}
-                        </span>
-                      </div>
+                      <Award size={12} className="text-accent" />
                     </>
                   )}
                 </div>
-
-                <h3 className="text-3xl font-bold mb-4 text-foreground">
-                  {project.title}
-                </h3>
-                <p className="text-muted-foreground mb-6 leading-relaxed">
-                  {project.description}
-                </p>
-
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {project.technologies.map((tech) => (
-                    <span
-                      key={tech}
-                      className="px-3 py-1 text-sm bg-primary/10 text-primary rounded-full border border-primary/20"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-
-                <div className="flex space-x-4">
-                  <motion.a
+                <div className="flex space-x-2">
+                  <a
                     href={project.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="flex items-center space-x-2 px-6 py-3 bg-primary text-primary-foreground rounded-full font-medium hover:bg-primary/90 transition-colors duration-300"
+                    className="p-2 text-muted-foreground hover:text-primary transition-colors"
                   >
                     <ExternalLink size={16} />
-                    <span>Live Demo</span>
-                  </motion.a>
-                  <motion.a
+                  </a>
+                  <a
                     href={project.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="flex items-center space-x-2 px-6 py-3 border border-primary text-primary rounded-full font-medium hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+                    className="p-2 text-muted-foreground hover:text-primary transition-colors"
                   >
                     <Github size={16} />
-                    <span>Code</span>
-                  </motion.a>
+                  </a>
                 </div>
+              </div>
+
+              <div className="aspect-video bg-gradient-to-br from-primary/20 to-accent/20 rounded-xl mb-4 flex items-center justify-center overflow-hidden">
+                <img
+                  src={project.image}
+                  alt={project.title + " screenshot"}
+                  className="object-cover w-full h-full rounded-xl"
+                />
+              </div>
+
+              <h3 className="text-xl font-bold mb-3 text-foreground">
+                {project.title}
+              </h3>
+              <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
+                {project.description}
+              </p>
+
+              <div className="flex flex-wrap gap-2 mb-4">
+                {project.technologies.map((tech) => (
+                  <span
+                    key={tech}
+                    className="px-2 py-1 text-xs bg-primary/10 text-primary rounded border border-primary/20"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+
+              <div className="flex space-x-3">
+                <motion.a
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="flex items-center space-x-2 px-4 py-2 bg-primary text-primary-foreground rounded-full text-sm font-medium hover:bg-primary/90 transition-colors duration-300"
+                >
+                  <ExternalLink size={14} />
+                  <span>Demo</span>
+                </motion.a>
+                <motion.a
+                  href={project.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="flex items-center space-x-2 px-4 py-2 border border-primary text-primary rounded-full text-sm font-medium hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+                >
+                  <Github size={14} />
+                  <span>Code</span>
+                </motion.a>
               </div>
             </motion.div>
           ))}
         </div>
 
-        {/* Other Projects */}
+        {/* Other Projects - Compact Grid */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -222,10 +198,10 @@ const Projects = () => {
           viewport={{ once: true }}
           className="mb-12"
         >
-          <h3 className="text-3xl font-bold text-center mb-12 text-foreground">
+          <h3 className="text-2xl font-bold text-center mb-8 text-foreground">
             Other Projects
           </h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-4">
             {otherProjects.map((project, index) => (
               <motion.div
                 key={project.id}
@@ -233,54 +209,54 @@ const Projects = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                whileHover={{ y: -5 }}
-                className="glass p-6 rounded-2xl group hover:border-primary/20 transition-all duration-300"
+                whileHover={{ y: -3 }}
+                className="glass p-4 rounded-xl group hover:border-primary/20 transition-all duration-300"
               >
-                <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center justify-between mb-3">
                   <div className="flex items-center space-x-2">
-                    <Calendar size={14} className="text-primary" />
-                    <span className="text-sm text-muted-foreground">
+                    <Calendar size={12} className="text-primary" />
+                    <span className="text-xs text-muted-foreground">
                       {project.date}
                     </span>
                     {project.award && (
                       <>
                         <div className="w-1 h-1 bg-muted-foreground rounded-full"></div>
-                        <Award size={12} className="text-accent" />
+                        <Award size={10} className="text-accent" />
                       </>
                     )}
                   </div>
-                  <div className="flex space-x-2">
+                  <div className="flex space-x-1">
                     <a
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-2 text-muted-foreground hover:text-primary transition-colors"
+                      className="p-1.5 text-muted-foreground hover:text-primary transition-colors"
                     >
-                      <ExternalLink size={16} />
+                      <ExternalLink size={14} />
                     </a>
                     <a
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-2 text-muted-foreground hover:text-primary transition-colors"
+                      className="p-1.5 text-muted-foreground hover:text-primary transition-colors"
                     >
-                      <Github size={16} />
+                      <Github size={14} />
                     </a>
                   </div>
                 </div>
 
-                <h4 className="text-xl font-semibold mb-3 text-foreground group-hover:text-primary transition-colors">
+                <h4 className="text-lg font-semibold mb-2 text-foreground group-hover:text-primary transition-colors">
                   {project.title}
                 </h4>
-                <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
+                <p className="text-xs text-muted-foreground mb-3 leading-relaxed">
                   {project.description}
                 </p>
 
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-1">
                   {project.technologies.map((tech) => (
                     <span
                       key={tech}
-                      className="px-2 py-1 text-xs bg-muted/20 text-muted-foreground rounded"
+                      className="px-2 py-0.5 text-xs bg-muted/20 text-muted-foreground rounded"
                     >
                       {tech}
                     </span>
@@ -291,7 +267,7 @@ const Projects = () => {
           </div>
         </motion.div>
 
-        {/* Call to Action */}
+        {/* Call to Action - Compact */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -299,24 +275,22 @@ const Projects = () => {
           viewport={{ once: true }}
           className="text-center"
         >
-          <div className="glass p-8 rounded-2xl max-w-2xl mx-auto">
-            <div className="flex items-center justify-center mb-4">
-              <Zap className="w-8 h-8 text-primary mr-3" />
-              <h3 className="text-2xl font-bold text-foreground">
+          <div className="glass p-6 rounded-2xl max-w-4xl mx-auto">
+            <div className="flex items-center justify-center mb-3">
+              <Zap className="w-6 h-6 text-primary mr-2" />
+              <h3 className="text-xl font-bold text-foreground">
                 Let's Build Something Amazing Together
               </h3>
             </div>
-            <p className="text-muted-foreground mb-6 leading-relaxed">
-              I'm always open to discussing new opportunities, interesting
-              projects, hackathons, or collaborating on open-source
-              contributions. Let's create the next big thing!
+            <p className="text-muted-foreground mb-4 leading-relaxed text-sm">
+              Open to new opportunities, interesting projects, hackathons, and open-source contributions.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <motion.a
                 href="#contact"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-3 bg-primary text-primary-foreground rounded-full font-medium hover:bg-primary/90 transition-colors duration-300"
+                className="px-6 py-2 bg-primary text-primary-foreground rounded-full font-medium hover:bg-primary/90 transition-colors duration-300 text-sm"
               >
                 Get In Touch
               </motion.a>
@@ -326,9 +300,9 @@ const Projects = () => {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="flex items-center space-x-2 px-8 py-3 border border-primary text-primary rounded-full font-medium hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+                className="flex items-center space-x-2 px-6 py-2 border border-primary text-primary rounded-full font-medium hover:bg-primary hover:text-primary-foreground transition-all duration-300 text-sm"
               >
-                <Github size={16} />
+                <Github size={14} />
                 <span>View More Projects</span>
               </motion.a>
             </div>

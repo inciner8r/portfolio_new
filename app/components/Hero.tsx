@@ -51,7 +51,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden pt-16 md:pt-0"
+      className="min-h-screen flex items-center relative overflow-hidden pt-16 md:pt-0"
     >
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden">
@@ -83,135 +83,166 @@ const Hero = () => {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="max-w-4xl mx-auto px-6 text-center relative z-10"
+        className="w-full max-w-7xl mx-auto px-6 relative z-10"
       >
-        {/* Avatar */}
-        <motion.div variants={itemVariants} className="mb-8">
-          <div className="relative w-32 h-32 mx-auto mb-6">
-            <Image
-              src="/avatar.jpg"
-              alt="Punarv Pawade"
-              fill
-              className="rounded-full object-cover border-4 border-primary/20 shadow-lg"
-              priority
-              onError={(e) => {
-                // Fallback to a default avatar if image doesn't exist
-                e.currentTarget.src =
-                  "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTI4IiBoZWlnaHQ9IjEyOCIgdmlld0JveD0iMCAwIDEyOCAxMjgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxMjgiIGhlaWdodD0iMTI4IiByeD0iNjQiIGZpbGw9IiNGM0Y0RjYiLz4KPHN2ZyB4PSIzMiIgeT0iMzIiIHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM2Mzc0OEUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj4KPHN2ZyB4PSIzMiIgeT0iMzIiIHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM2Mzc0OEUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj4KPHN2ZyB4PSIzMiIgeT0iMzIiIHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM2Mzc0OEUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj4KPHBhdGggZD0iTTIwIDIxdi0yYTQgNCAwIDAgMC00LTRIOGE0IDQgMCAwIDAtNCA0djIiLz4KPGNpcmNsZSBjeD0iMTIiIGN5PSI3IiByPSI0Ii8+Cjwvc3ZnPgo8L3N2Zz4KPC9zdmc+";
-              }}
-            />
-          </div>
-        </motion.div>
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left side - Main intro */}
+          <div className="text-left">
+            <motion.div variants={itemVariants} className="mb-6">
+              <span className="text-primary text-lg font-medium">Hello, I'm</span>
+            </motion.div>
 
-        <motion.div variants={itemVariants} className="mb-6">
-          <span className="text-primary text-lg font-medium">Hello, I'm</span>
-        </motion.div>
-
-        <motion.h1
-          variants={itemVariants}
-          className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-foreground via-primary to-accent bg-clip-text text-transparent"
-        >
-          Punarv Pawade
-        </motion.h1>
-
-        <motion.h2
-          variants={itemVariants}
-          className="text-2xl md:text-3xl text-muted-foreground mb-8"
-        >
-          Software Engineer | Blockchain Developer
-        </motion.h2>
-
-        <motion.p
-          variants={itemVariants}
-          className="text-lg text-muted-foreground max-w-2xl mx-auto mb-12 leading-relaxed"
-        >
-          Software Engineer with 2+ years of experience in full-stack
-          development and blockchain technologies. Currently working at AFT
-          Group, specialized in building scalable web applications, smart
-          contracts, and decentralized systems using modern technologies like
-          Golang, React, and various blockchain platforms.
-        </motion.p>
-
-        <motion.div
-          variants={itemVariants}
-          className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
-        >
-          <motion.a
-            href="#projects"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="px-8 py-3 bg-primary text-primary-foreground rounded-full font-medium hover:bg-primary/90 transition-colors duration-300"
-          >
-            View My Work
-          </motion.a>
-
-          <motion.a
-            href="#contact"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="px-8 py-3 border border-primary text-primary rounded-full font-medium hover:bg-primary hover:text-primary-foreground transition-all duration-300"
-          >
-            Let's Connect
-          </motion.a>
-        </motion.div>
-
-        <motion.div
-          variants={itemVariants}
-          className="flex justify-center space-x-6 mb-16"
-        >
-          {[
-            {
-              icon: Github,
-              href: "https://github.com/inciner8r",
-              label: "GitHub",
-            },
-            {
-              icon: Linkedin,
-              href: "https://www.linkedin.com/in/punarvpawade/",
-              label: "LinkedIn",
-            },
-            {
-              icon: Twitter,
-              href: "https://x.com/inciner8rz",
-              label: "Twitter",
-            },
-            { icon: Send, href: "https://t.me/inciner8r", label: "Telegram" },
-            {
-              icon: DiscordIcon,
-              href: "https://discord.com/users/569047479140483082",
-              label: "Discord",
-            },
-            {
-              icon: Mail,
-              href: "mailto:punarvpawade17@gmail.com",
-              label: "Email",
-            },
-          ].map(({ icon: Icon, href, label }) => (
-            <motion.a
-              key={label}
-              href={href}
-              target={href.startsWith("http") ? "_blank" : "_self"}
-              rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
-              whileHover={{ scale: 1.2, y: -2 }}
-              whileTap={{ scale: 0.9 }}
-              className="p-3 glass rounded-full text-muted-foreground hover:text-primary transition-colors duration-300"
-              aria-label={label}
+            <motion.h1
+              variants={itemVariants}
+              className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-foreground via-primary to-accent bg-clip-text text-transparent"
             >
-              <Icon size={24} />
-            </motion.a>
-          ))}
-        </motion.div>
+              Punarv Pawade
+            </motion.h1>
 
-        <motion.div variants={itemVariants} className="flex justify-center">
-          <motion.a
-            href="#about"
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="text-muted-foreground hover:text-primary transition-colors duration-300"
-          >
-            <ArrowDown size={24} />
-          </motion.a>
-        </motion.div>
+            <motion.h2
+              variants={itemVariants}
+              className="text-xl md:text-2xl lg:text-3xl text-muted-foreground mb-8"
+            >
+              Software Engineer | Blockchain Developer
+            </motion.h2>
+
+            <motion.p
+              variants={itemVariants}
+              className="text-base md:text-lg text-muted-foreground mb-8 leading-relaxed"
+            >
+              Software Engineer with 2+ years of experience in full-stack
+              development and blockchain technologies. Currently working at AFT
+              Group, specialized in building scalable web applications, smart
+              contracts, and decentralized systems.
+            </motion.p>
+
+            <motion.div
+              variants={itemVariants}
+              className="flex flex-col sm:flex-row gap-4 mb-8"
+            >
+              <motion.a
+                href="#projects"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-6 py-3 bg-primary text-primary-foreground rounded-full font-medium hover:bg-primary/90 transition-colors duration-300 text-center"
+              >
+                View My Work
+              </motion.a>
+
+              <motion.a
+                href="#contact"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-6 py-3 border border-primary text-primary rounded-full font-medium hover:bg-primary hover:text-primary-foreground transition-all duration-300 text-center"
+              >
+                Let's Connect
+              </motion.a>
+            </motion.div>
+
+            <motion.div
+              variants={itemVariants}
+              className="flex flex-wrap gap-4"
+            >
+              {[
+                {
+                  icon: Github,
+                  href: "https://github.com/inciner8r",
+                  label: "GitHub",
+                },
+                {
+                  icon: Linkedin,
+                  href: "https://www.linkedin.com/in/punarvpawade/",
+                  label: "LinkedIn",
+                },
+                {
+                  icon: Twitter,
+                  href: "https://x.com/inciner8rz",
+                  label: "Twitter",
+                },
+                { icon: Send, href: "https://t.me/inciner8r", label: "Telegram" },
+                {
+                  icon: DiscordIcon,
+                  href: "https://discord.com/users/569047479140483082",
+                  label: "Discord",
+                },
+                {
+                  icon: Mail,
+                  href: "mailto:punarvpawade17@gmail.com",
+                  label: "Email",
+                },
+              ].map(({ icon: Icon, href, label }) => (
+                <motion.a
+                  key={label}
+                  href={href}
+                  target={href.startsWith("http") ? "_blank" : "_self"}
+                  rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+                  whileHover={{ scale: 1.2, y: -2 }}
+                  whileTap={{ scale: 0.9 }}
+                  className="p-3 glass rounded-full text-muted-foreground hover:text-primary transition-colors duration-300"
+                  aria-label={label}
+                >
+                  <Icon size={20} />
+                </motion.a>
+              ))}
+            </motion.div>
+          </div>
+
+          {/* Right side - Additional info & stats */}
+          <div className="lg:pl-8">
+            <motion.div variants={itemVariants} className="mb-8">
+              <div className="relative w-48 h-48 mx-auto lg:mx-0">
+                <Image
+                  src="/avatar.jpg"
+                  alt="Punarv Pawade"
+                  fill
+                  className="rounded-full object-cover border-4 border-primary/20 shadow-lg"
+                  priority
+                  onError={(e) => {
+                    e.currentTarget.src =
+                      "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTI4IiBoZWlnaHQ9IjEyOCIgdmlld0JveD0iMCAwIDEyOCAxMjgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxMjgiIGhlaWdodD0iMTI4IiByeD0iNjQiIGZpbGw9IiNGM0Y0RjYiLz4KPHN2ZyB4PSIzMiIgeT0iMzIiIHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM2Mzc0OEUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj4KPHN2ZyB4PSIzMiIgeT0iMzIiIHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM2Mzc0OEUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj4KPHN2ZyB4PSIzMiIgeT0iMzIiIHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM2Mzc0OEUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj4KPHBhdGggZD0iTTIwIDIxdi0yYTQgNCAwIDAgMC00LTRIOGE0IDQgMCAwIDAtNCA0djIiLz4KPGNpcmNsZSBjeD0iMTIiIGN5PSI3IiByPSI0Ii8+Cjwvc3ZnPgo8L3N2Zz4KPC9zdmc+";
+                  }}
+                />
+              </div>
+            </motion.div>
+
+            {/* Quick stats/info cards */}
+            <motion.div variants={itemVariants} className="space-y-4">
+              <div className="glass p-4 rounded-xl">
+                <h3 className="text-lg font-semibold text-primary mb-2">Current Role</h3>
+                <p className="text-sm text-muted-foreground">Software Engineer at AFT Group</p>
+                <p className="text-xs text-muted-foreground mt-1">Dec 2024 - Present</p>
+              </div>
+              
+              <div className="glass p-4 rounded-xl">
+                <h3 className="text-lg font-semibold text-accent mb-2">Expertise</h3>
+                <div className="flex flex-wrap gap-1">
+                  {["Golang", "React", "Next.js", "Blockchain", "AI/ML"].map((tech) => (
+                    <span key={tech} className="px-2 py-1 text-xs bg-accent/10 text-accent rounded">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div className="glass p-4 rounded-xl">
+                <h3 className="text-lg font-semibold text-primary mb-2">Experience</h3>
+                <p className="text-sm text-muted-foreground">2+ years in full-stack development</p>
+                <p className="text-xs text-muted-foreground">Blockchain & AI integration specialist</p>
+              </div>
+            </motion.div>
+
+            <motion.div variants={itemVariants} className="mt-8 text-center lg:text-left">
+              <motion.a
+                href="#about"
+                animate={{ y: [0, 10, 0] }}
+                transition={{ duration: 2, repeat: Infinity }}
+                className="text-muted-foreground hover:text-primary transition-colors duration-300 inline-block"
+              >
+                <ArrowDown size={24} />
+              </motion.a>
+            </motion.div>
+          </div>
+        </div>
       </motion.div>
     </section>
   );

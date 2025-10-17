@@ -90,9 +90,9 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 px-6">
-      <div className="max-w-6xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-16">
+    <section id="contact" className="py-16 px-6">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Form */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -100,11 +100,11 @@ const Contact = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <div className="glass p-8 rounded-2xl">
-              <h3 className="text-2xl font-bold mb-6 text-foreground">
+            <div className="glass p-6 rounded-2xl">
+              <h3 className="text-xl font-bold mb-4 text-foreground">
                 Send a Message
               </h3>
-              <form className="space-y-6">
+              <form className="space-y-4">
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
                     <label
@@ -208,7 +208,7 @@ const Contact = () => {
             className="space-y-8"
           >
             <div>
-              <h3 className="text-2xl font-bold mb-6 text-foreground">
+              <h3 className="text-xl font-bold mb-4 text-foreground">
                 Contact Information
               </h3>
               <div className="space-y-4">
@@ -246,7 +246,7 @@ const Contact = () => {
             </div>
 
             <div>
-              <h3 className="text-2xl font-bold mb-6 text-foreground">
+              <h3 className="text-xl font-bold mb-4 text-foreground">
                 Connect With Me
               </h3>
               <div className="flex space-x-4">
