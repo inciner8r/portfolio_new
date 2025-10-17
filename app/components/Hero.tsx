@@ -103,17 +103,17 @@ const Hero = () => {
               variants={itemVariants}
               className="text-xl md:text-2xl lg:text-3xl text-muted-foreground mb-8"
             >
-              Software Engineer | Blockchain Developer
+              Software Engineer | AI & Web3 Integrations
             </motion.h2>
 
             <motion.p
               variants={itemVariants}
               className="text-base md:text-lg text-muted-foreground mb-8 leading-relaxed"
             >
-              Software Engineer with 2+ years of experience in full-stack
-              development and blockchain technologies. Currently working at AFT
-              Group, specialized in building scalable web applications, smart
-              contracts, and decentralized systems.
+              Software Engineer with 2+ years of experience in full-stack,
+              AI tooling, and Web3 integrations. Currently at AFT Group,
+              focused on scalable web apps, AI agents/workflows (LangGraph,
+              LangChain), RAG, and dApp integrations/indexers.
             </motion.p>
 
             <motion.div
@@ -216,7 +216,7 @@ const Hero = () => {
               <div className="glass p-4 rounded-xl">
                 <h3 className="text-lg font-semibold text-accent mb-2">Expertise</h3>
                 <div className="flex flex-wrap gap-1">
-                  {["Golang", "React", "Next.js", "Blockchain", "AI/ML"].map((tech) => (
+                  {["Golang", "React", "Next.js", "Web3 Integrations", "AI/ML", "Agents", "RAG"].map((tech) => (
                     <span key={tech} className="px-2 py-1 text-xs bg-accent/10 text-accent rounded">
                       {tech}
                     </span>
@@ -227,7 +227,7 @@ const Hero = () => {
               <div className="glass p-4 rounded-xl">
                 <h3 className="text-lg font-semibold text-primary mb-2">Experience</h3>
                 <p className="text-sm text-muted-foreground">2+ years in full-stack development</p>
-                <p className="text-xs text-muted-foreground">Blockchain & AI integration specialist</p>
+                <p className="text-xs text-muted-foreground">AI & Web3 integration specialist</p>
               </div>
             </motion.div>
 

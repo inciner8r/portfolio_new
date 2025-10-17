@@ -1,7 +1,9 @@
+
 'use client';
 
 import { motion } from 'framer-motion';
-import { Calendar, MapPin, ExternalLink, Briefcase } from 'lucide-react';
+import { useState } from 'react';
+import { Calendar, MapPin, ExternalLink, Briefcase, ChevronDown, ChevronUp, Sparkles } from 'lucide-react';
 
 const Experience = () => {
   const experiences = [
@@ -22,7 +24,8 @@ const Experience = () => {
         'Implemented ML-based recommendation system for enhanced user experience',
         'Managed cloud infrastructure on AWS and Hetzner/Coolify platforms'
       ],
-      technologies: ['Next.js', 'Python', 'AI SDK', 'LangGraph', 'LangChain', 'AWS', 'Hetzner', 'Coolify', 'Machine Learning', 'Multi-tenant Architecture'],
+      technologies: ['Next.js', 'Python', 'AI SDK', 'LangGraph', 'LangChain', 'AWS', 'Hetzner', 'Coolify', 'Machine Learning', 'Multi-tenant Architecture', 'PostgreSQL', 'Redis'],
+      aiHighlights: ['AI SDK', 'LangGraph', 'LangChain', 'RAG', 'Agents'],
       website: '#',
       projects: [
         {
@@ -89,6 +92,7 @@ const Experience = () => {
         'Worked on blockchain integrations in dApps rather than direct smart contract development'
       ],
       technologies: ['Golang', 'Node.js', 'NextJS', 'ReactJS', 'AWS EC2', 'Google Cloud', 'Docker', 'GitHub Actions', 'gRPC', 'libp2p', 'Stripe', 'Web3', 'Blockchain Integrations'],
+      aiHighlights: ['ChatGPT integration', 'DALLE2 media generation'],
       website: '#',
       projects: [
         {
@@ -111,6 +115,8 @@ const Experience = () => {
     }
   ];
 
+  const [expanded, setExpanded] = useState<Record<number, boolean>>({});
+
   return (
     <section id="experience" className="py-16 px-6">
       <div className="max-w-7xl mx-auto">
@@ -125,88 +131,145 @@ const Experience = () => {
             Work Experience
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Professional journey through blockchain development, full-stack engineering, and AI integration.
+            Compact snapshot of roles with AI and Web3 integrations. Expand cards for details.
           </p>
         </motion.div>
 
-        <div className="relative">
-          {/* Timeline line */}
-          <div className="absolute left-8 md:left-1/2 transform md:-translate-x-px top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-accent to-primary"></div>
-
-          <div className="space-y-12">
-            {experiences.map((experience, index) => (
+        <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+          {experiences.map((experience, index) => {
+            const isOpen = !!expanded[experience.id];
+            const topAchievements = experience.achievements.slice(0, 3);
+            const visibleTech = experience.technologies.slice(0, 6);
+            const remainingTech = experience.technologies.length - visibleTech.length;
+            return (
               <motion.div
                 key={experience.id}
-                initial={{ opacity: 0, y: 50 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.2 }}
+                transition={{ duration: 0.6, delay: index * 0.05 }}
                 viewport={{ once: true }}
-                className={`relative flex items-center ${
-                  index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                }`}
+                className="glass p-6 rounded-2xl hover:border-primary/20 transition-all duration-300"
               >
-                {/* Timeline dot */}
-                <div className="absolute left-8 md:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-primary rounded-full border-4 border-background z-10"></div>
+                <div className="flex items-center justify-between mb-3">
+                  <div className="flex items-center gap-2">
+                    <span className={`px-2.5 py-1 text-xs rounded-full ${
+                      experience.type === 'Full-time'
+                        ? 'bg-primary/10 text-primary border border-primary/20'
+                        : 'bg-accent/10 text-accent border border-accent/20'
+                    }`}>
+                      {experience.type}
+                    </span>
+                    <div className="flex items-center gap-1 text-xs text-muted-foreground">
+                      <Calendar size={12} />
+                      <span>{experience.duration}</span>
+                    </div>
+                  </div>
+                  {experience.website && experience.website !== '#' && (
+                    <a
+                      href={experience.website}
+                      className="text-muted-foreground hover:text-primary transition-colors"
+                      aria-label="Company website"
+                    >
+                      <ExternalLink size={16} />
+                    </a>
+                  )}
+                </div>
 
-                {/* Content */}
-                <div className={`w-full md:w-1/2 ${index % 2 === 0 ? 'md:pr-12' : 'md:pl-12'} ml-16 md:ml-0`}>
-                  <motion.div
-                    whileHover={{ scale: 1.02 }}
-                    className="glass p-8 rounded-2xl hover:border-primary/20 transition-all duration-300"
-                  >
-                    <div className="flex flex-wrap items-center justify-between mb-4">
-                      <div className="flex items-center space-x-2">
-                        <span className={`px-3 py-1 text-xs rounded-full ${
-                          experience.type === 'Full-time' 
-                            ? 'bg-primary/10 text-primary border border-primary/20' 
-                            : 'bg-accent/10 text-accent border border-accent/20'
-                        }`}>
-                          {experience.type}
+                <h3 className="text-lg font-bold text-foreground">{experience.position}</h3>
+                <h4 className="text-sm font-semibold text-primary mb-2">{experience.company}</h4>
+
+                <div className="flex items-center gap-1 mb-3 text-muted-foreground">
+                  <MapPin size={12} />
+                  <span className="text-xs">{experience.location}</span>
+                </div>
+
+                {experience.aiHighlights && experience.aiHighlights.length > 0 && (
+                  <div className="mb-3">
+                    <div className="flex items-center gap-1 mb-1">
+                      <Sparkles className="w-4 h-4 text-accent" />
+                      <span className="text-xs font-semibold text-foreground">AI Highlights</span>
+                    </div>
+                    <div className="flex flex-wrap gap-1">
+                      {experience.aiHighlights.map((h) => (
+                        <span key={h} className="px-2 py-0.5 text-[10px] bg-accent/10 text-accent rounded border border-accent/20">
+                          {h}
                         </span>
-                        <div className="flex items-center space-x-1 text-sm text-muted-foreground">
-                          <Calendar size={14} />
-                          <span>{experience.duration}</span>
-                        </div>
-                      </div>
-                      <a
-                        href={experience.website}
-                        className="text-muted-foreground hover:text-primary transition-colors"
-                      >
-                        <ExternalLink size={16} />
-                      </a>
+                      ))}
                     </div>
+                  </div>
+                )}
 
-                    <h3 className="text-2xl font-bold mb-2 text-foreground">{experience.position}</h3>
-                    <h4 className="text-lg font-semibold mb-2 text-primary">{experience.company}</h4>
-                    
-                    <div className="flex items-center space-x-1 mb-4 text-muted-foreground">
-                      <MapPin size={14} />
-                      <span className="text-sm">{experience.location}</span>
-                    </div>
+                <ul className="space-y-1 mb-3">
+                  {topAchievements.map((achievement, idx) => (
+                    <li key={idx} className="flex items-start gap-2 text-xs text-muted-foreground">
+                      <div className="w-1.5 h-1.5 bg-primary rounded-full mt-1.5 flex-shrink-0" />
+                      <span>{achievement}</span>
+                    </li>
+                  ))}
+                </ul>
 
-                    <p className="text-muted-foreground mb-6 leading-relaxed">{experience.description}</p>
+                <div className="flex flex-wrap gap-1 mb-4">
+                  {visibleTech.map((tech) => (
+                    <span
+                      key={tech}
+                      className="px-2 py-0.5 text-[10px] bg-muted/20 text-muted-foreground rounded border border-muted/30"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                  {remainingTech > 0 && (
+                    <span className="px-2 py-0.5 text-[10px] bg-muted/20 text-muted-foreground rounded border border-muted/30">
+                      +{remainingTech} more
+                    </span>
+                  )}
+                </div>
 
-                    {/* Key Projects for Lazarus Network */}
+                <button
+                  onClick={() => setExpanded((prev) => ({ ...prev, [experience.id]: !isOpen }))}
+                  className="w-full flex items-center justify-center gap-2 text-xs font-medium py-2 rounded-lg border border-border/60 hover:border-primary/40 hover:text-primary transition-colors"
+                  aria-expanded={isOpen}
+                  aria-controls={`exp-details-${experience.id}`}
+                >
+                  {isOpen ? (
+                    <>
+                      <ChevronUp size={14} /> Hide details
+                    </>
+                  ) : (
+                    <>
+                      <ChevronDown size={14} /> View details
+                    </>
+                  )}
+                </button>
+
+                <motion.div
+                  id={`exp-details-${experience.id}`}
+                  initial={false}
+                  animate={{ height: isOpen ? 'auto' : 0, opacity: isOpen ? 1 : 0 }}
+                  className="overflow-hidden"
+                >
+                  <div className="pt-4 mt-2 border-t border-border/50">
+                    <p className="text-sm text-muted-foreground mb-4 leading-relaxed">{experience.description}</p>
+
                     {experience.projects && (
-                      <div className="mb-6">
-                        <h5 className="text-sm font-semibold mb-3 text-foreground">Key Projects:</h5>
-                        <div className="space-y-3">
+                      <div className="mb-4">
+                        <h5 className="text-xs font-semibold mb-2 text-foreground">Key Projects</h5>
+                        <div className="space-y-2">
                           {experience.projects.map((project, idx) => (
-                            <div key={idx} className="glass p-4 rounded-xl border border-accent/10">
-                              <h6 className="font-semibold text-accent mb-1">{project.name}</h6>
-                              <p className="text-sm text-muted-foreground">{project.description}</p>
+                            <div key={idx} className="glass p-3 rounded-xl border border-accent/10">
+                              <h6 className="text-sm font-semibold text-accent mb-0.5">{project.name}</h6>
+                              <p className="text-xs text-muted-foreground">{project.description}</p>
                             </div>
                           ))}
                         </div>
                       </div>
                     )}
 
-                    <div className="mb-6">
-                      <h5 className="text-sm font-semibold mb-3 text-foreground">Key Achievements:</h5>
-                      <ul className="space-y-2">
+                    <div className="mb-2">
+                      <h5 className="text-xs font-semibold mb-2 text-foreground">Full Achievements</h5>
+                      <ul className="space-y-1">
                         {experience.achievements.map((achievement, idx) => (
-                          <li key={idx} className="flex items-start space-x-2 text-sm text-muted-foreground">
-                            <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                          <li key={idx} className="flex items-start gap-2 text-xs text-muted-foreground">
+                            <div className="w-1.5 h-1.5 bg-primary rounded-full mt-1.5 flex-shrink-0" />
                             <span>{achievement}</span>
                           </li>
                         ))}
@@ -214,23 +277,23 @@ const Experience = () => {
                     </div>
 
                     <div>
-                      <h5 className="text-sm font-semibold mb-3 text-foreground">Technologies Used:</h5>
-                      <div className="flex flex-wrap gap-2">
+                      <h5 className="text-xs font-semibold mb-2 text-foreground">Technologies Used</h5>
+                      <div className="flex flex-wrap gap-1">
                         {experience.technologies.map((tech) => (
                           <span
                             key={tech}
-                            className="px-2 py-1 text-xs bg-muted/20 text-muted-foreground rounded border border-muted/30"
+                            className="px-2 py-0.5 text-[10px] bg-muted/20 text-muted-foreground rounded border border-muted/30"
                           >
                             {tech}
                           </span>
                         ))}
                       </div>
                     </div>
-                  </motion.div>
-                </div>
+                  </div>
+                </motion.div>
               </motion.div>
-            ))}
-          </div>
+            );
+          })}
         </div>
 
         {/* Education Section */}

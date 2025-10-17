@@ -34,7 +34,7 @@ const About = () => {
       items: ["Gin-Gonic", "Node.js", "gRPC", "REST APIs", "Hardhat"],
     },
     {
-      category: "AI & Blockchain",
+      category: "AI & Web3",
       items: ["AI SDK", "LangGraph", "LangChain", "Ethereum", "Aptos", "Web3", "DeFi", "dApp Integrations"],
     },
     {
