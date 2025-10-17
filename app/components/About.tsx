@@ -34,8 +34,8 @@ const About = () => {
       items: ["Gin-Gonic", "Node.js", "gRPC", "REST APIs", "Hardhat"],
     },
     {
-      category: "Blockchain & AI",
-      items: ["Ethereum", "Aptos", "Web3", "DeFi", "dApp Integrations", "AI SDK", "LangGraph", "LangChain"],
+      category: "AI & Blockchain",
+      items: ["AI SDK", "LangGraph", "LangChain", "Ethereum", "Aptos", "Web3", "DeFi", "dApp Integrations"],
     },
     {
       category: "DevOps & Cloud",
@@ -62,9 +62,9 @@ const About = () => {
     },
     {
       icon: Globe,
-      title: "Web3 & AI Integration",
+      title: "AI & Web3 Integration",
       description:
-        "Building decentralized applications with blockchain integrations and AI-powered features that shape the future of technology.",
+        "Building AI-powered applications with blockchain integrations that shape the future of technology.",
     },
     {
       icon: Zap,
@@ -104,7 +104,7 @@ const About = () => {
             I'm a passionate software engineer who thrives on building
             cutting-edge applications and contributing to open-source projects.
             My journey began with traditional web development and evolved into
-            blockchain integrations and AI-powered applications.
+            AI-powered applications and blockchain integrations.
           </p>
         </motion.div>
 
@@ -123,14 +123,14 @@ const About = () => {
                 Currently working as a Software Engineer at AFT Group, with
                 previous experience at MetabotAI and Lazarus Network. My journey
                 in software development spans over 2+ years, focusing on
-                full-stack development, blockchain integrations, and AI tooling.
+                full-stack development, AI tooling, and blockchain integrations.
               </p>
               <p>
                 I've worked on diverse projects from building authentication
                 middleware for gRPC endpoints to developing complete backend
                 systems for launchpad marketplaces. My expertise includes
                 working with modern technologies like Golang, React, AI SDK,
-                LangGraph, and blockchain integrations in dApps.
+                LangGraph, LangChain, and blockchain integrations in dApps.
               </p>
               <p>
                 When I'm not coding, you'll find me playing guitar, producing
