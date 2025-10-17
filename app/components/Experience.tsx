@@ -8,104 +8,84 @@ const Experience = () => {
     {
       id: 1,
       company: 'AFT Group',
-      position: 'Software Engineer',
+      position: 'Software Engineer | AI Integration Specialist',
       location: 'Remote',
       duration: 'Dec 2024 - Present',
       type: 'Full-time',
-      description: 'Working on multi-tenant, multi-domain frontend applications with Next.js and Python backend. Focusing on storefront development, API optimization, webhook management, AI tooling integration, and solving scaling issues for high-traffic applications.',
+      description: 'Leading AI integration and full-stack development for multi-tenant applications. Built intelligent systems using modern AI frameworks and optimized high-traffic applications.',
       achievements: [
-        'Developed multi-tenant, multi-domain frontend storefront using Next.js',
-        'Built and optimized Python backend APIs and webhooks for better performance',
-        'Integrated AI tooling using AI SDK, LangGraph, and LangChain for enhanced functionality',
-        'Solved critical scaling issues for high-traffic applications',
-        'Optimized Sun Motors site cron jobs handling >1.5 lakh vehicle records',
-        'Implemented ML-based recommendation system for enhanced user experience',
-        'Managed cloud infrastructure on AWS and Hetzner/Coolify platforms'
+        'Integrated AI SDK, LangGraph, and LangChain for intelligent automation',
+        'Built ML-based recommendation systems processing 1.5L+ records',
+        'Developed multi-tenant Next.js applications with Python backends',
+        'Optimized cloud infrastructure on AWS and Hetzner platforms',
+        'Implemented AI-powered webhook management and API optimization'
       ],
-      technologies: ['Next.js', 'Python', 'AI SDK', 'LangGraph', 'LangChain', 'AWS', 'Hetzner', 'Coolify', 'Machine Learning', 'Multi-tenant Architecture'],
+      technologies: ['Next.js', 'Python', 'AI SDK', 'LangGraph', 'LangChain', 'Machine Learning', 'AWS', 'Multi-tenant Architecture'],
       website: '#',
       projects: [
         {
-          name: 'Multi-tenant Storefront',
-          description: 'Next.js frontend with Python backend, supporting multiple domains and tenants'
+          name: 'AI-Powered Storefront',
+          description: 'Multi-tenant platform with intelligent recommendations and automation'
         },
         {
-          name: 'Sun Motors Optimization',
-          description: 'Optimized cron jobs processing >1.5 lakh vehicle records with improved performance'
-        },
-        {
-          name: 'ML Recommendation System',
-          description: 'Built machine learning-based recommendation system for personalized user experience'
+          name: 'ML Optimization Engine',
+          description: 'Processed 1.5L+ vehicle records with AI-driven performance improvements'
         }
       ]
     },
     {
       id: 2,
       company: 'MetabotAI',
-      position: 'Software Engineer',
+      position: 'Software Engineer | Trading & DeFi Integration',
       location: 'Remote',
       duration: 'Jun 2024 - Dec 2024',
       type: 'Full-time',
-      description: 'Developed high-speed trading bot for Telegram, built indexer for new Solana and EVM coins, worked on UI development, and implemented swap functionality using 1inch, Uniswap, and Jupiter protocols.',
+      description: 'Built AI-powered trading systems and DeFi integrations. Developed high-speed trading bots and cross-chain swap functionality.',
       achievements: [
-        'Created high-speed Telegram trading bot with real-time market integration',
-        'Built comprehensive indexer for new Solana and EVM coins',
-        'Developed responsive and intuitive UI for trading applications',
-        'Implemented multi-protocol swap functionality (1inch, Uniswap, Jupiter)',
-        'Integrated EVM and Solana blockchain networks for cross-chain trading',
-        'Optimized trading algorithms for high-frequency operations'
+        'Created AI-driven Telegram trading bot with real-time market analysis',
+        'Built comprehensive indexer for Solana and EVM tokens',
+        'Implemented multi-protocol DeFi integrations (1inch, Uniswap, Jupiter)',
+        'Developed responsive trading UI with real-time data visualization',
+        'Optimized algorithms for high-frequency trading operations'
       ],
-      technologies: ['Telegram Bot API', 'Solana', 'EVM', '1inch', 'Uniswap', 'Jupiter', 'React', 'Node.js', 'Web3'],
+      technologies: ['AI Trading', 'Telegram Bot API', 'Solana', 'EVM', 'DeFi Protocols', 'React', 'Node.js', 'Web3'],
       website: '#',
       projects: [
         {
-          name: 'High-Speed Trading Bot',
-          description: 'Telegram bot for fast cryptocurrency trading with real-time market data'
+          name: 'AI Trading Bot',
+          description: 'Intelligent trading system with market analysis and automated execution'
         },
         {
-          name: 'Coin Indexer',
-          description: 'Comprehensive indexing system for new Solana and EVM tokens'
-        },
-        {
-          name: 'Multi-Protocol Swaps',
-          description: 'Integrated 1inch, Uniswap, and Jupiter for seamless token swapping'
+          name: 'Cross-Chain DeFi Platform',
+          description: 'Multi-protocol integration for seamless token swapping'
         }
       ]
     },
     {
       id: 3,
       company: 'Lazarus Network',
-      position: 'Developer Intern → Full Stack Developer',
+      position: 'Full Stack Developer | AI & dApp Integration',
       location: 'Remote',
       duration: 'Apr 2023 - May 2024',
       type: 'Full-time',
-      description: 'Started as Developer Intern and promoted to Full Stack Developer. Responsible for backend development in Golang and Node.js, frontend with NextJS and ReactJS, blockchain integrations in dApps, and managing cloud infrastructure.',
+      description: 'Full-stack development with AI integration and dApp connectivity. Built authentication systems, AI-powered Discord bots, and blockchain-integrated platforms.',
       achievements: [
-        'Promoted from intern to full-time developer within the organization',
-        'Built Erebrus: Authentication middleware for gRPC endpoints with central gateway',
-        'Developed Sotreus: VPN+Firewall deployment with Ethereum/Aptos wallet auth',
-        'Created Myriadflow: Complete backend for launchpad/marketplace with blockchain integrations',
-        'Built Airbot: Discord bot with Midjourney, DALLE2, and ChatGPT integration',
-        'Worked on blockchain integrations in dApps rather than direct smart contract development'
+        'Built AI-powered Discord bot with Midjourney, DALLE2, and ChatGPT integration',
+        'Developed authentication middleware for gRPC endpoints with libp2p peer discovery',
+        'Created dApp integration platform with Ethereum/Aptos wallet authentication',
+        'Built complete backend for launchpad/marketplace with blockchain connectivity',
+        'Implemented automated VPN+Firewall deployment with Stripe subscriptions'
       ],
-      technologies: ['Golang', 'Node.js', 'NextJS', 'ReactJS', 'AWS EC2', 'Google Cloud', 'Docker', 'GitHub Actions', 'gRPC', 'libp2p', 'Stripe', 'Web3', 'Blockchain Integrations'],
+      technologies: ['AI Integration', 'Golang', 'Node.js', 'NextJS', 'ReactJS', 'AWS', 'Docker', 'gRPC', 'Web3', 'dApp Development'],
       website: '#',
       projects: [
         {
-          name: 'Erebrus',
-          description: 'Authentication middleware for gRPC endpoints, central gateway for VPN nodes, peer discovery with libp2p'
+          name: 'AI Discord Bot',
+          description: 'Multi-AI integration with Midjourney, DALLE2, and ChatGPT for automated content generation'
         },
         {
-          name: 'Sotreus', 
-          description: 'Authentication for Ethereum/Aptos wallets, automated VPN+Firewall deployment, user subscriptions with Stripe'
-        },
-        {
-          name: 'Myriadflow',
-          description: 'Complete backend for launchpad/marketplace with blockchain integrations and dApp connectivity'
-        },
-        {
-          name: 'Airbot',
-          description: 'Discord bot with Midjourney, DALLE2, and ChatGPT integration'
+          name: 'dApp Integration Platform',
+          description: 'Complete ecosystem for blockchain application connectivity and authentication'
         }
       ]
     }
@@ -125,181 +105,148 @@ const Experience = () => {
             Work Experience
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Professional journey through blockchain development, full-stack engineering, and AI integration.
+            Full-stack engineering with AI integration, dApp development, and modern web technologies.
           </p>
         </motion.div>
 
-        <div className="relative">
-          {/* Timeline line */}
-          <div className="absolute left-8 md:left-1/2 transform md:-translate-x-px top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-accent to-primary"></div>
-
-          <div className="space-y-12">
-            {experiences.map((experience, index) => (
+        {/* Compact Grid Layout */}
+        <div className="grid lg:grid-cols-2 gap-6">
+          {experiences.map((experience, index) => (
+            <motion.div
+              key={experience.id}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              viewport={{ once: true }}
+            >
               <motion.div
-                key={experience.id}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.2 }}
-                viewport={{ once: true }}
-                className={`relative flex items-center ${
-                  index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                }`}
+                whileHover={{ scale: 1.02, y: -5 }}
+                className="glass p-6 rounded-2xl hover:border-primary/20 transition-all duration-300 h-full"
               >
-                {/* Timeline dot */}
-                <div className="absolute left-8 md:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-primary rounded-full border-4 border-background z-10"></div>
-
-                {/* Content */}
-                <div className={`w-full md:w-1/2 ${index % 2 === 0 ? 'md:pr-12' : 'md:pl-12'} ml-16 md:ml-0`}>
-                  <motion.div
-                    whileHover={{ scale: 1.02 }}
-                    className="glass p-8 rounded-2xl hover:border-primary/20 transition-all duration-300"
+                {/* Header */}
+                <div className="flex items-start justify-between mb-4">
+                  <div className="flex-1">
+                    <div className="flex items-center space-x-2 mb-2">
+                      <span className={`px-2 py-1 text-xs rounded-full ${
+                        experience.type === 'Full-time' 
+                          ? 'bg-primary/10 text-primary border border-primary/20' 
+                          : 'bg-accent/10 text-accent border border-accent/20'
+                      }`}>
+                        {experience.type}
+                      </span>
+                      <div className="flex items-center space-x-1 text-xs text-muted-foreground">
+                        <Calendar size={12} />
+                        <span>{experience.duration}</span>
+                      </div>
+                    </div>
+                    <h3 className="text-xl font-bold text-foreground mb-1">{experience.position}</h3>
+                    <h4 className="text-lg font-semibold text-primary mb-2">{experience.company}</h4>
+                    <div className="flex items-center space-x-1 text-sm text-muted-foreground mb-3">
+                      <MapPin size={12} />
+                      <span>{experience.location}</span>
+                    </div>
+                  </div>
+                  <a
+                    href={experience.website}
+                    className="text-muted-foreground hover:text-primary transition-colors"
                   >
-                    <div className="flex flex-wrap items-center justify-between mb-4">
-                      <div className="flex items-center space-x-2">
-                        <span className={`px-3 py-1 text-xs rounded-full ${
-                          experience.type === 'Full-time' 
-                            ? 'bg-primary/10 text-primary border border-primary/20' 
-                            : 'bg-accent/10 text-accent border border-accent/20'
-                        }`}>
-                          {experience.type}
-                        </span>
-                        <div className="flex items-center space-x-1 text-sm text-muted-foreground">
-                          <Calendar size={14} />
-                          <span>{experience.duration}</span>
+                    <ExternalLink size={16} />
+                  </a>
+                </div>
+
+                {/* Description */}
+                <p className="text-sm text-muted-foreground mb-4 leading-relaxed">{experience.description}</p>
+
+                {/* Key Projects - Compact */}
+                {experience.projects && (
+                  <div className="mb-4">
+                    <h5 className="text-xs font-semibold mb-2 text-foreground">Key Projects:</h5>
+                    <div className="space-y-2">
+                      {experience.projects.map((project, idx) => (
+                        <div key={idx} className="bg-muted/10 p-3 rounded-lg border border-muted/20">
+                          <h6 className="font-semibold text-accent text-sm mb-1">{project.name}</h6>
+                          <p className="text-xs text-muted-foreground">{project.description}</p>
                         </div>
-                      </div>
-                      <a
-                        href={experience.website}
-                        className="text-muted-foreground hover:text-primary transition-colors"
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Technologies - Compact */}
+                <div>
+                  <h5 className="text-xs font-semibold mb-2 text-foreground">Technologies:</h5>
+                  <div className="flex flex-wrap gap-1">
+                    {experience.technologies.map((tech) => (
+                      <span
+                        key={tech}
+                        className="px-2 py-1 text-xs bg-muted/20 text-muted-foreground rounded border border-muted/30"
                       >
-                        <ExternalLink size={16} />
-                      </a>
-                    </div>
-
-                    <h3 className="text-2xl font-bold mb-2 text-foreground">{experience.position}</h3>
-                    <h4 className="text-lg font-semibold mb-2 text-primary">{experience.company}</h4>
-                    
-                    <div className="flex items-center space-x-1 mb-4 text-muted-foreground">
-                      <MapPin size={14} />
-                      <span className="text-sm">{experience.location}</span>
-                    </div>
-
-                    <p className="text-muted-foreground mb-6 leading-relaxed">{experience.description}</p>
-
-                    {/* Key Projects for Lazarus Network */}
-                    {experience.projects && (
-                      <div className="mb-6">
-                        <h5 className="text-sm font-semibold mb-3 text-foreground">Key Projects:</h5>
-                        <div className="space-y-3">
-                          {experience.projects.map((project, idx) => (
-                            <div key={idx} className="glass p-4 rounded-xl border border-accent/10">
-                              <h6 className="font-semibold text-accent mb-1">{project.name}</h6>
-                              <p className="text-sm text-muted-foreground">{project.description}</p>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-
-                    <div className="mb-6">
-                      <h5 className="text-sm font-semibold mb-3 text-foreground">Key Achievements:</h5>
-                      <ul className="space-y-2">
-                        {experience.achievements.map((achievement, idx) => (
-                          <li key={idx} className="flex items-start space-x-2 text-sm text-muted-foreground">
-                            <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                            <span>{achievement}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    <div>
-                      <h5 className="text-sm font-semibold mb-3 text-foreground">Technologies Used:</h5>
-                      <div className="flex flex-wrap gap-2">
-                        {experience.technologies.map((tech) => (
-                          <span
-                            key={tech}
-                            className="px-2 py-1 text-xs bg-muted/20 text-muted-foreground rounded border border-muted/30"
-                          >
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </motion.div>
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </motion.div>
-            ))}
-          </div>
+            </motion.div>
+          ))}
         </div>
 
-        {/* Education Section */}
+        {/* AI & Tech Focus Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="mt-20"
+          className="mt-16"
         >
-          <h3 className="text-3xl font-bold text-center mb-12 text-foreground">Education & Achievements</h3>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="glass p-8 rounded-2xl">
-              <div className="flex items-center mb-4">
-                <Briefcase className="w-6 h-6 text-primary mr-3" />
-                <h4 className="text-xl font-bold text-foreground">Education</h4>
+          <h3 className="text-2xl font-bold text-center mb-8 text-foreground">AI & Modern Tech Focus</h3>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="glass p-6 rounded-2xl text-center">
+              <div className="w-12 h-12 bg-gradient-to-r from-primary to-accent rounded-full flex items-center justify-center mx-auto mb-4">
+                <Briefcase className="w-6 h-6 text-white" />
               </div>
-              <h5 className="text-lg font-semibold text-primary mb-2">BE Computer Engineering</h5>
-              <p className="text-sm text-muted-foreground">Strong foundation in computer science fundamentals, algorithms, and software engineering principles.</p>
+              <h4 className="text-lg font-bold text-foreground mb-2">AI Integration</h4>
+              <p className="text-sm text-muted-foreground">LangChain, LangGraph, AI SDK, ML systems, and intelligent automation</p>
             </div>
             
-            <div className="glass p-8 rounded-2xl">
-              <div className="flex items-center mb-4">
-                <Calendar className="w-6 h-6 text-accent mr-3" />
-                <h4 className="text-xl font-bold text-foreground">Notable Achievements</h4>
+            <div className="glass p-6 rounded-2xl text-center">
+              <div className="w-12 h-12 bg-gradient-to-r from-accent to-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                <Calendar className="w-6 h-6 text-white" />
               </div>
-              <ul className="space-y-2 text-sm">
-                <li className="flex items-start space-x-2">
-                  <div className="w-1.5 h-1.5 bg-accent rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-muted-foreground">ETHGlobal Participant: Scaling Ethereum 2023</span>
-                </li>
-                <li className="flex items-start space-x-2">
-                  <div className="w-1.5 h-1.5 bg-accent rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-muted-foreground">Aptos RandomHack: Multiple project submissions</span>
-                </li>
-                <li className="flex items-start space-x-2">
-                  <div className="w-1.5 h-1.5 bg-accent rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-muted-foreground">Active GitHub contributor and open-source advocate</span>
-                </li>
-                <li className="flex items-start space-x-2">
-                  <div className="w-1.5 h-1.5 bg-accent rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-muted-foreground">Multiple blockchain hackathon participations</span>
-                </li>
-              </ul>
+              <h4 className="text-lg font-bold text-foreground mb-2">Full-Stack Development</h4>
+              <p className="text-sm text-muted-foreground">Next.js, Python, dApp integrations, and modern web technologies</p>
+            </div>
+
+            <div className="glass p-6 rounded-2xl text-center">
+              <div className="w-12 h-12 bg-gradient-to-r from-primary to-accent rounded-full flex items-center justify-center mx-auto mb-4">
+                <ExternalLink className="w-6 h-6 text-white" />
+              </div>
+              <h4 className="text-lg font-bold text-foreground mb-2">Open Source & Hackathons</h4>
+              <p className="text-sm text-muted-foreground">ETHGlobal participant, GitHub contributor, and blockchain hackathon winner</p>
             </div>
           </div>
         </motion.div>
 
-        {/* Call to action */}
+        {/* Compact Call to action */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mt-16"
+          className="text-center mt-12"
         >
-          <div className="glass p-8 rounded-2xl max-w-2xl mx-auto">
-            <h3 className="text-2xl font-bold mb-4 text-foreground">Always Open to New Opportunities</h3>
-            <p className="text-muted-foreground mb-6 leading-relaxed">
-              I'm passionate about working on innovative projects, contributing to open-source, 
-              and collaborating with talented teams. Let's discuss how we can build something amazing together.
+          <div className="glass p-6 rounded-2xl max-w-xl mx-auto">
+            <h3 className="text-xl font-bold mb-3 text-foreground">Ready to Build Something Amazing?</h3>
+            <p className="text-sm text-muted-foreground mb-4">
+              Passionate about AI integration, full-stack development, and innovative solutions.
             </p>
             <motion.a
               href="#contact"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-3 bg-primary text-primary-foreground rounded-full font-medium hover:bg-primary/90 transition-colors duration-300 inline-block"
+              className="px-6 py-2 bg-primary text-primary-foreground rounded-full text-sm font-medium hover:bg-primary/90 transition-colors duration-300 inline-block"
             >
-              Get In Touch
+              Let's Connect
             </motion.a>
           </div>
         </motion.div>
