@@ -75,6 +75,11 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Offset anchor targets for fixed header */
+section[id] {
+  scroll-margin-top: 80px; /* match header height */
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;

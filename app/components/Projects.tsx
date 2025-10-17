@@ -75,27 +75,30 @@ const Projects = () => {
   const otherProjects = projects.filter((project) => !project.featured);
 
   return (
-    <section id="projects" className="py-20 px-6">
-      <div className="max-w-6xl mx-auto">
+    <section id="projects" className="py-16 md:py-20 px-4 md:px-6">
+      <div className="max-w-[88rem] mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="mb-10 md:mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-            Featured Projects
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            A showcase of my blockchain and full-stack development work,
-            featuring hackathon winners, open-source contributions, and
-            innovative solutions to real-world problems.
+          <div className="flex items-end justify-between gap-6 flex-wrap">
+            <h2 className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              Featured Projects
+            </h2>
+            <a href="#contact" className="text-sm md:text-base text-muted-foreground hover:text-primary transition-colors">
+              Available for work →
+            </a>
+          </div>
+          <p className="mt-3 md:mt-4 text-base md:text-xl text-muted-foreground max-w-3xl leading-relaxed">
+            Selected work across open-source, hackathons, and product builds.
           </p>
         </motion.div>
 
         {/* Featured Projects */}
-        <div className="space-y-20 mb-20">
+        <div className="space-y-14 md:space-y-20 mb-16 md:mb-20">
           {featuredProjects.map((project, index) => (
             <motion.div
               key={project.id}
@@ -103,7 +106,7 @@ const Projects = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.2 }}
               viewport={{ once: true }}
-              className={`grid lg:grid-cols-2 gap-12 items-center ${
+              className={`grid lg:grid-cols-2 gap-8 lg:gap-12 items-center ${
                 index % 2 === 1 ? "lg:grid-flow-col-dense" : ""
               }`}
             >
@@ -112,7 +115,7 @@ const Projects = () => {
                   whileHover={{ scale: 1.02 }}
                   className="relative group overflow-hidden rounded-2xl"
                 >
-                  <div className="aspect-video bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl flex items-center justify-center overflow-hidden">
+                  <div className="aspect-[16/9] md:aspect-[21/9] bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl flex items-center justify-center overflow-hidden">
                     <img
                       src={project.image}
                       alt={project.title + " screenshot"}
@@ -185,7 +188,7 @@ const Projects = () => {
                   ))}
                 </div>
 
-                <div className="flex space-x-4">
+                <div className="flex space-x-3 md:space-x-4">
                   <motion.a
                     href={project.liveUrl}
                     target="_blank"
@@ -222,10 +225,10 @@ const Projects = () => {
           viewport={{ once: true }}
           className="mb-12"
         >
-          <h3 className="text-3xl font-bold text-center mb-12 text-foreground">
-            Other Projects
+          <h3 className="text-2xl md:text-3xl font-bold mb-6 md:mb-12 text-foreground">
+            More Projects
           </h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-6">
             {otherProjects.map((project, index) => (
               <motion.div
                 key={project.id}
@@ -234,7 +237,7 @@ const Projects = () => {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -5 }}
-                className="glass p-6 rounded-2xl group hover:border-primary/20 transition-all duration-300"
+                className="glass p-4 md:p-6 rounded-2xl group hover:border-primary/20 transition-all duration-300"
               >
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center space-x-2">

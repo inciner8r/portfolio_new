@@ -30,7 +30,7 @@ const Header = () => {
         isScrolled ? 'glass backdrop-blur-md' : ''
       }`}
     >
-      <nav className="max-w-6xl mx-auto px-6 py-4">
+      <nav className="max-w-[88rem] mx-auto px-3 sm:px-4 md:px-6 py-4">
         <div className="flex items-center justify-between">
           <motion.div
             initial={{ opacity: 0 }}
