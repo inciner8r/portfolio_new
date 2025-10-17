@@ -88,55 +88,43 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 px-6">
-      <div className="max-w-6xl mx-auto">
+    <section id="about" className="py-16 px-6">
+      <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
             About Me
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            I'm a passionate software engineer who thrives on building
-            cutting-edge applications and contributing to open-source projects.
-            My journey began with traditional web development and evolved into
-            AI-powered applications and blockchain integrations.
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            Passionate software engineer building cutting-edge applications and contributing to open-source projects.
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
+        <div className="grid lg:grid-cols-3 gap-8 items-start mb-16">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
+            className="lg:col-span-1"
           >
-            <h3 className="text-2xl font-bold mb-6 text-foreground">
+            <h3 className="text-xl font-bold mb-4 text-foreground">
               My Journey
             </h3>
-            <div className="space-y-4 text-muted-foreground leading-relaxed">
+            <div className="space-y-3 text-muted-foreground leading-relaxed text-sm">
               <p>
-                Currently working as a Software Engineer at AFT Group, with
-                previous experience at MetabotAI and Lazarus Network. My journey
-                in software development spans over 2+ years, focusing on
-                full-stack development, AI tooling, and blockchain integrations.
+                Software Engineer at AFT Group with 2+ years experience in full-stack development, AI tooling, and blockchain integrations.
               </p>
               <p>
-                I've worked on diverse projects from building authentication
-                middleware for gRPC endpoints to developing complete backend
-                systems for launchpad marketplaces. My expertise includes
-                working with modern technologies like Golang, React, AI SDK,
-                LangGraph, LangChain, and blockchain integrations in dApps.
+                Worked on diverse projects from authentication middleware to complete backend systems for launchpad marketplaces.
               </p>
               <p>
-                When I'm not coding, you'll find me playing guitar, producing
-                music, competing in sports like basketball, football and table
-                tennis, or gaming. I'm also an Arch Linux user and active
-                contributor to developer communities.
+                When not coding: guitar, music production, sports, gaming, and contributing to developer communities.
               </p>
             </div>
           </motion.div>
@@ -146,7 +134,7 @@ const About = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="grid grid-cols-2 gap-4"
+            className="lg:col-span-2 grid grid-cols-2 md:grid-cols-3 gap-4"
           >
             {skills.map((skillGroup, index) => (
               <motion.div
@@ -155,14 +143,14 @@ const About = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="glass p-6 rounded-2xl"
+                className="glass p-4 rounded-xl"
               >
-                <h4 className="text-lg font-semibold mb-3 text-primary">
+                <h4 className="text-sm font-semibold mb-2 text-primary">
                   {skillGroup.category}
                 </h4>
-                <ul className="space-y-2">
+                <ul className="space-y-1">
                   {skillGroup.items.map((skill) => (
-                    <li key={skill} className="text-sm text-muted-foreground">
+                    <li key={skill} className="text-xs text-muted-foreground">
                       {skill}
                     </li>
                   ))}
@@ -177,12 +165,12 @@ const About = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="mb-20"
+          className="mb-16"
         >
-          <h3 className="text-3xl font-bold text-center mb-12 text-foreground">
+          <h3 className="text-2xl font-bold text-center mb-8 text-foreground">
             What Drives Me
           </h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
             {values.map((value, index) => (
               <motion.div
                 key={value.title}
@@ -190,16 +178,16 @@ const About = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                whileHover={{ y: -5 }}
-                className="glass p-6 rounded-2xl text-center group hover:border-primary/20 transition-all duration-300"
+                whileHover={{ y: -3 }}
+                className="glass p-4 rounded-xl text-center group hover:border-primary/20 transition-all duration-300"
               >
-                <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 mb-4 group-hover:bg-primary/20 transition-colors duration-300">
-                  <value.icon className="w-6 h-6 text-primary" />
+                <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 mb-3 group-hover:bg-primary/20 transition-colors duration-300">
+                  <value.icon className="w-5 h-5 text-primary" />
                 </div>
-                <h4 className="text-lg font-semibold mb-3 text-foreground">
+                <h4 className="text-base font-semibold mb-2 text-foreground">
                   {value.title}
                 </h4>
-                <p className="text-sm text-muted-foreground leading-relaxed">
+                <p className="text-xs text-muted-foreground leading-relaxed">
                   {value.description}
                 </p>
               </motion.div>
@@ -207,7 +195,7 @@ const About = () => {
           </div>
         </motion.div>
 
-        {/* Personal Interests */}
+        {/* Personal Interests - Compact */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -215,10 +203,10 @@ const About = () => {
           viewport={{ once: true }}
           className="text-center"
         >
-          <h3 className="text-3xl font-bold mb-12 text-foreground">
+          <h3 className="text-2xl font-bold mb-8 text-foreground">
             Beyond Coding
           </h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
             {interests.map((interest, index) => (
               <motion.div
                 key={interest.name}
@@ -227,31 +215,35 @@ const About = () => {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.05 }}
-                className="glass p-6 rounded-2xl text-center group hover:border-primary/20 transition-all duration-300"
+                className="glass p-4 rounded-xl text-center group hover:border-primary/20 transition-all duration-300"
               >
-                <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-accent/10 mb-4 group-hover:bg-accent/20 transition-colors duration-300">
-                  <interest.icon className="w-6 h-6 text-accent" />
+                <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-accent/10 mb-3 group-hover:bg-accent/20 transition-colors duration-300">
+                  <interest.icon className="w-5 h-5 text-accent" />
                 </div>
-                <p className="text-sm font-medium text-foreground">
+                <p className="text-xs font-medium text-foreground">
                   {interest.name}
                 </p>
               </motion.div>
             ))}
           </div>
-          <div className="mt-8 glass p-6 rounded-2xl max-w-2xl mx-auto">
-            <p className="text-muted-foreground leading-relaxed">
-              <strong className="text-foreground">Location:</strong>{" "}
-              Maharashtra, India
-              <br />
-              <strong className="text-foreground">Education:</strong> BE
-              Computer Engineering
-              <br />
-              <strong className="text-foreground">Philosophy:</strong> I believe
-              in the power of open-source software and enjoy experimenting with
-              emerging technologies. Always eager to connect with like-minded
-              developers and work on innovative projects that push the
-              boundaries of technology.
-            </p>
+          <div className="glass p-4 rounded-xl max-w-4xl mx-auto">
+            <div className="grid md:grid-cols-3 gap-4 text-sm">
+              <div>
+                <strong className="text-foreground">Location:</strong>
+                <br />
+                <span className="text-muted-foreground">Maharashtra, India</span>
+              </div>
+              <div>
+                <strong className="text-foreground">Education:</strong>
+                <br />
+                <span className="text-muted-foreground">BE Computer Engineering</span>
+              </div>
+              <div>
+                <strong className="text-foreground">Philosophy:</strong>
+                <br />
+                <span className="text-muted-foreground">Open-source advocate, always experimenting with emerging technologies</span>
+              </div>
+            </div>
           </div>
         </motion.div>
       </div>
