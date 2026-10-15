@@ -2,7 +2,7 @@ export const profile = {
   name: "Punarv Pawade",
   role: "Software Engineer",
   tagline: "Software engineer building AI-native systems.",
-  intro: "I've spent 3+ years across web, backend, AI and infrastructure, and I'm increasingly pulled towards systems and security. I pick up whatever the problem needs, learn fast, and take it all the way to production.",
+  intro: "I've spent 3+ years across web, backend, AI and infrastructure. I pick up whatever the problem needs, learn fast, and take it all the way to production. Right now I'm going deep on system design.",
   stack: ["TypeScript", "Python", "Next.js", "FastAPI", "Postgres", "Redis", "MCP", "Vercel AI SDK", "Twilio", "Docker"],
   photo: "/avatar.jpg",
   email: "punarvpawade17@gmail.com",
@@ -186,33 +186,31 @@ export const sideProjects: SideProject[] = [
 export type Area = {
   area: string;
   shipped: string;
-  exploring?: string;
   tools: string;
 };
+
+export const learning =
+  "System design: distributed systems, data consistency, and how queues and storage behave at scale.";
 
 export const range: Area[] = [
   {
     area: "AI & LLMs",
     shipped: "MCP server that lets AI agents edit live sites safely, a chat-to-React page builder, model routing and cost tracking",
-    exploring: "Agent evals, and using LLMs for code review and security work",
     tools: "Vercel AI SDK, OpenRouter, MCP, Qdrant",
   },
   {
     area: "Security",
     shipped: "Multi-tenant isolation hardening, SSRF guards with DNS pinning, SSO with replay protection, OAuth for agent access",
-    exploring: "Threat modelling, offensive testing, prompt-injection defences",
     tools: "OAuth 2, JWT, Postgres RLS",
   },
   {
     area: "Systems & infra",
     shipped: "Rebuilt a logging pipeline, fixed unbounded backups and TLS automation, built a custom Android Linux kernel",
-    exploring: "Linux internals, networking and performance profiling",
     tools: "Docker, Traefik, Grafana / Loki, Cloudflare Workers, GitHub Actions",
   },
   {
     area: "Backend & data",
     shipped: "Usage billing with reconciliation, job queues, in-database analytics with keyset pagination",
-    exploring: "Distributed systems design: consistency, partitioning, and queues at scale",
     tools: "FastAPI, Node / NestJS, Postgres, MongoDB, Redis, BullMQ",
   },
   {

@@ -1,5 +1,6 @@
 import Button from "./Button";
 import ThemeToggle from "./ThemeToggle";
+import Logo from "./Logo";
 
 const links = [
   { label: "Experience", href: "#experience" },
@@ -11,8 +12,8 @@ export default function Header() {
   return (
     <header className="site-header">
       <nav className="wrap flex items-center justify-between gap-6 py-3">
-        <a href="#top" className="display text-2xl no-underline" aria-label="Punarv Pawade, back to top">
-          PP<span style={{ color: "var(--red)" }}>.</span>
+        <a href="#top" className="logo" aria-label="Punarv Pawade, back to top">
+          <Logo />
         </a>
         <div className="flex items-center gap-5 sm:gap-8">
           <ul className="hidden sm:flex gap-8 list-none m-0 p-0">
