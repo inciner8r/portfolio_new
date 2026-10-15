@@ -9,7 +9,7 @@ export default function Contact() {
           Let&apos;s build something
         </h2>
         <p className="lede muted mt-6 mb-9">
-          I&apos;m open to full-stack and AI engineering roles. The fastest way to reach me is email.
+          I&apos;m open to engineering roles anywhere in the stack, and to problems I haven&apos;t solved yet. Email is the fastest way to reach me.
         </p>
         <div className="flex flex-wrap gap-4">
           <Button href={`mailto:${profile.email}`}>Email me</Button>

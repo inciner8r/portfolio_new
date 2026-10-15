@@ -3,6 +3,7 @@ import ThemeToggle from "./ThemeToggle";
 
 const links = [
   { label: "Experience", href: "#experience" },
+  { label: "Range", href: "#range" },
   { label: "About", href: "#about" },
 ];
 

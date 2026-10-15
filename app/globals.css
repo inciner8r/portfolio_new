@@ -289,6 +289,45 @@ a {
   border-bottom: 1px solid var(--line);
 }
 
+/* ---------- Range ---------- */
+
+.range-head,
+.range-row {
+  grid-template-columns: 200px 1.3fr 1fr;
+  gap: 2.5rem;
+}
+.range-head {
+  padding-bottom: 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+.range-row {
+  display: grid;
+  padding-block: 1.6rem;
+  border-top: 1px solid var(--line);
+}
+.range-exploring {
+  padding-left: 0.9rem;
+  border-left: 2px solid var(--red);
+}
+.range-label {
+  display: none;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--muted);
+  margin-bottom: 0.25rem;
+}
+@media (max-width: 767px) {
+  .range-row {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .range-label {
+    display: block;
+  }
+}
+
 /* ---------- Hero ---------- */
 
 .hero {

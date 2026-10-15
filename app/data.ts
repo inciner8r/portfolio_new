@@ -2,7 +2,7 @@ export const profile = {
   name: "Punarv Pawade",
   role: "Full-stack engineer",
   tagline: "I ship software across the whole stack.",
-  intro: "Web, backend, AI and infrastructure. I pick up whatever the problem needs and take it all the way to production.",
+  intro: "Web, backend, AI and infrastructure, with a growing pull towards systems and security. I pick up whatever the problem needs, learn fast, and take it all the way to production.",
   stack: ["TypeScript", "Python", "Next.js", "FastAPI", "Postgres", "Redis", "MCP", "Vercel AI SDK", "Twilio", "Docker"],
   photo: "/avatar.jpg",
   email: "punarvpawade17@gmail.com",
@@ -18,7 +18,7 @@ export const profile = {
 export const about = [
   "Lately a lot of my work has been where LLMs meet production. I built an MCP server that lets AI agents like Claude and ChatGPT edit live customer websites, behind scoped keys and a preview-then-confirm publish step. I've also debugged flaky model output down to the individual upstream host serving it.",
   "I'm just as comfortable in an incident. I've dealt with a stalled logging pipeline, backups growing without bound and a connection pool leaking under load. I move fast, but I own the architecture and the root cause, and every fix leaves a guard test behind.",
-  "Before this I spent two years in Web3, building trading bots, chain indexers, VPN infrastructure and hackathon projects. Away from the keyboard: guitar, music production, sport and games.",
+  "Before this I spent two years in Web3, building trading bots, chain indexers, VPN infrastructure and hackathon projects. I like not being boxed in: if a problem lives in a kernel, a network or a model, that is where I want to be. Away from the keyboard: guitar, music production, sport and games.",
 ];
 
 export type CaseStudy = {
@@ -175,13 +175,47 @@ export const sideProjects: SideProject[] = [
   },
 ];
 
-export const skills: { group: string; items: string }[] = [
-  { group: "Languages", items: "TypeScript, Python, SQL, Go" },
-  { group: "Frontend", items: "React, Next.js (App Router, RSC), React Native, Tailwind, TanStack" },
-  { group: "Backend", items: "FastAPI, Node / NestJS, Postgres & Supabase, MongoDB, Redis, BullMQ" },
-  { group: "AI", items: "MCP servers, Vercel AI SDK, OpenRouter, vector search (Qdrant), evals and validators" },
-  { group: "Infra", items: "Docker, Traefik, GitHub Actions, Cloudflare Workers & R2, AWS, Grafana / Loki" },
-  { group: "Realtime", items: "Twilio Voice & TaskRouter, Socket.IO, webhooks and idempotency" },
+export type Area = {
+  area: string;
+  shipped: string;
+  exploring?: string;
+  tools: string;
+};
+
+export const range: Area[] = [
+  {
+    area: "AI & LLMs",
+    shipped: "MCP server that lets AI agents edit live sites safely, a chat-to-React page builder, model routing and cost tracking",
+    exploring: "Agent evals, and using LLMs for code review and security work",
+    tools: "Vercel AI SDK, OpenRouter, MCP, Qdrant",
+  },
+  {
+    area: "Security",
+    shipped: "Multi-tenant isolation hardening, SSRF guards with DNS pinning, SSO with replay protection, OAuth for agent access",
+    exploring: "Threat modelling, offensive testing, prompt-injection defences",
+    tools: "OAuth 2, JWT, Postgres RLS",
+  },
+  {
+    area: "Systems & infra",
+    shipped: "Rebuilt a logging pipeline, fixed unbounded backups and TLS automation, built a custom Android Linux kernel",
+    exploring: "Linux internals, networking and performance profiling",
+    tools: "Docker, Traefik, Grafana / Loki, Cloudflare Workers, GitHub Actions",
+  },
+  {
+    area: "Backend & data",
+    shipped: "Usage billing with reconciliation, job queues, in-database analytics with keyset pagination",
+    tools: "FastAPI, Node / NestJS, Postgres, MongoDB, Redis, BullMQ",
+  },
+  {
+    area: "Web & mobile",
+    shipped: "Multi-tenant Next.js sites for 100+ dealers, a React Native app with native calling",
+    tools: "TypeScript, React, Next.js, React Native, Tailwind",
+  },
+  {
+    area: "Realtime",
+    shipped: "Call routing and softphones, live sign-in across tabs over websockets",
+    tools: "Twilio Voice & TaskRouter, Socket.IO, webhooks",
+  },
 ];
 
 export const socials = [
