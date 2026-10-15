@@ -1,51 +1,59 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Barlow, Big_Shoulders } from "next/font/google";
 import "./globals.css";
-import ThemeToggle from "./components/ThemeToggle";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const display = Big_Shoulders({
+  variable: "--font-big-shoulders",
   subsets: ["latin"],
+  weight: ["600", "700", "800"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const body = Barlow({
+  variable: "--font-barlow",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
+
+const title = "Punarv Pawade | Full-stack & AI Engineer";
+const description =
+  "Full-stack engineer building production AI systems, multi-tenant SaaS, cloud telephony and the infrastructure under them.";
 
 export const metadata: Metadata = {
-  title: "Punarv Pawade | Software Engineer & Blockchain Developer",
-  description: "Software Engineer with 2+ years of experience in full-stack development and blockchain technologies. Specialized in Golang, React, and Web3 development.",
-  keywords: ["Software Engineer", "Full-stack Developer", "Blockchain Developer", "Golang", "ReactJS", "NextJS", "Ethereum", "Aptos", "Web3", "Smart Contract", "Open Source", "Punarv Pawade"],
+  metadataBase: new URL("https://www.punarv.dev"),
+  title,
+  description,
+  keywords: [
+    "Punarv Pawade",
+    "Full-stack Engineer",
+    "AI Engineer",
+    "MCP",
+    "Next.js",
+    "TypeScript",
+    "Python",
+    "FastAPI",
+    "LLM",
+  ],
   authors: [{ name: "Punarv Pawade" }],
-  viewport: "width=device-width, initial-scale=1",
   openGraph: {
-    title: "Punarv Pawade | Software Engineer & Blockchain Developer",
-    description: "Software Engineer with 2+ years of experience in full-stack development and blockchain technologies.",
+    title,
+    description,
     url: "https://www.punarv.dev/",
-    siteName: "Punarv Pawade Portfolio",
+    siteName: "Punarv Pawade",
     type: "website",
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Punarv Pawade | Software Engineer & Blockchain Developer",
-    description: "Software Engineer with 2+ years of experience in full-stack development and blockchain technologies.",
-  },
+  twitter: { card: "summary_large_image", title, description },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#ece8e1",
+};
+
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased gradient-bg min-h-screen`}
-      >
-        <ThemeToggle />
-        {children}
-      </body>
+    <html lang="en" className={`${display.variable} ${body.variable}`}>
+      <body>{children}</body>
     </html>
   );
 }

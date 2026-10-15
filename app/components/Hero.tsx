@@ -1,251 +1,52 @@
-"use client";
+import Button from "./Button";
+import { profile } from "../data";
 
-import { motion, circOut } from "framer-motion";
-import {
-  ArrowDown,
-  Github,
-  Linkedin,
-  Mail,
-  Twitter,
-  Send,
-} from "lucide-react";
-import Image from "next/image";
-
-// Custom Discord Icon Component
-const DiscordIcon = ({ size = 24, className = "" }: { size?: number; className?: string }) => (
-  <svg
-    width={size}
-    height={size}
-    viewBox="0 0 24 24"
-    fill="currentColor"
-    className={className}
-  >
-    <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028a14.09 14.09 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127a12.299 12.299 0 0 1-1.873.892a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028a19.839 19.839 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.956-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.946 2.418-2.157 2.418z"/>
-  </svg>
-);
-
-const Hero = () => {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        delayChildren: 0.3,
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.8,
-        ease: circOut,
-      },
-    },
-  };
+export default function Hero() {
+  const [first, last] = profile.name.split(" ");
 
   return (
-    <section
-      id="home"
-      className="min-h-screen flex items-center relative overflow-hidden pt-16 md:pt-0"
-    >
-      {/* Background decorative elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <motion.div
-          animate={{
-            rotate: 360,
-          }}
-          transition={{
-            duration: 50,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-          className="absolute -top-40 -right-40 w-80 h-80 rounded-full border border-primary/10"
-        />
-        <motion.div
-          animate={{
-            rotate: -360,
-          }}
-          transition={{
-            duration: 40,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-          className="absolute -bottom-40 -left-40 w-96 h-96 rounded-full border border-accent/10"
-        />
+    <section id="top" className="wrap pt-14 sm:pt-20 pb-20 sm:pb-28">
+      <div className="grid gap-10 lg:grid-cols-[auto_1fr] lg:items-end">
+        <h1 className="display hero-name" style={{ fontSize: "clamp(5.5rem, 21vw, 17.5rem)" }}>
+          <span>{first}</span>
+          <span>{last}</span>
+        </h1>
+
+        <dl className="hero-rest m-0 border-l-2 pl-6 lg:mb-4 lg:justify-self-end" style={{ borderColor: "var(--ink)" }}>
+          <dt className="muted text-sm">Currently</dt>
+          <dd className="m-0 mt-1 text-xl font-semibold">
+            {profile.current.title}, {profile.current.company}
+          </dd>
+          <dd className="m-0 muted">Since {profile.current.since}</dd>
+          <dd className="m-0 mt-3 max-w-[30ch]">{profile.current.blurb}</dd>
+          <dt className="muted text-sm mt-6">Based in</dt>
+          <dd className="m-0 mt-1">{profile.location}</dd>
+        </dl>
       </div>
 
-      <motion.div
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-        className="w-full max-w-7xl mx-auto px-6 relative z-10"
-      >
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left side - Main intro */}
-          <div className="text-left">
-            <motion.div variants={itemVariants} className="mb-6">
-              <span className="text-primary text-lg font-medium">Hello, I'm</span>
-            </motion.div>
+      <div
+        className="hero-mark mt-8 mb-12"
+        style={{ height: 6, width: "min(220px, 40%)", background: "var(--red)" }}
+        aria-hidden
+      />
 
-            <motion.h1
-              variants={itemVariants}
-              className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-foreground via-primary to-accent bg-clip-text text-transparent"
-            >
-              Punarv Pawade
-            </motion.h1>
-
-            <motion.h2
-              variants={itemVariants}
-              className="text-xl md:text-2xl lg:text-3xl text-muted-foreground mb-8"
-            >
-              Software Engineer | Blockchain Developer
-            </motion.h2>
-
-            <motion.p
-              variants={itemVariants}
-              className="text-base md:text-lg text-muted-foreground mb-8 leading-relaxed"
-            >
-              Software Engineer with 2+ years of experience in full-stack
-              development and blockchain technologies. Currently working at AFT
-              Group, specialized in building scalable web applications, smart
-              contracts, and decentralized systems.
-            </motion.p>
-
-            <motion.div
-              variants={itemVariants}
-              className="flex flex-col sm:flex-row gap-4 mb-8"
-            >
-              <motion.a
-                href="#projects"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-6 py-3 bg-primary text-primary-foreground rounded-full font-medium hover:bg-primary/90 transition-colors duration-300 text-center"
-              >
-                View My Work
-              </motion.a>
-
-              <motion.a
-                href="#contact"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-6 py-3 border border-primary text-primary rounded-full font-medium hover:bg-primary hover:text-primary-foreground transition-all duration-300 text-center"
-              >
-                Let's Connect
-              </motion.a>
-            </motion.div>
-
-            <motion.div
-              variants={itemVariants}
-              className="flex flex-wrap gap-4"
-            >
-              {[
-                {
-                  icon: Github,
-                  href: "https://github.com/inciner8r",
-                  label: "GitHub",
-                },
-                {
-                  icon: Linkedin,
-                  href: "https://www.linkedin.com/in/punarvpawade/",
-                  label: "LinkedIn",
-                },
-                {
-                  icon: Twitter,
-                  href: "https://x.com/inciner8rz",
-                  label: "Twitter",
-                },
-                { icon: Send, href: "https://t.me/inciner8r", label: "Telegram" },
-                {
-                  icon: DiscordIcon,
-                  href: "https://discord.com/users/569047479140483082",
-                  label: "Discord",
-                },
-                {
-                  icon: Mail,
-                  href: "mailto:punarvpawade17@gmail.com",
-                  label: "Email",
-                },
-              ].map(({ icon: Icon, href, label }) => (
-                <motion.a
-                  key={label}
-                  href={href}
-                  target={href.startsWith("http") ? "_blank" : "_self"}
-                  rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
-                  whileHover={{ scale: 1.2, y: -2 }}
-                  whileTap={{ scale: 0.9 }}
-                  className="p-3 glass rounded-full text-muted-foreground hover:text-primary transition-colors duration-300"
-                  aria-label={label}
-                >
-                  <Icon size={20} />
-                </motion.a>
-              ))}
-            </motion.div>
-          </div>
-
-          {/* Right side - Additional info & stats */}
-          <div className="lg:pl-8">
-            <motion.div variants={itemVariants} className="mb-8">
-              <div className="relative w-48 h-48 mx-auto lg:mx-0">
-                <Image
-                  src="/avatar.jpg"
-                  alt="Punarv Pawade"
-                  fill
-                  className="rounded-full object-cover border-4 border-primary/20 shadow-lg"
-                  priority
-                  onError={(e) => {
-                    e.currentTarget.src =
-                      "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTI4IiBoZWlnaHQ9IjEyOCIgdmlld0JveD0iMCAwIDEyOCAxMjgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxMjgiIGhlaWdodD0iMTI4IiByeD0iNjQiIGZpbGw9IiNGM0Y0RjYiLz4KPHN2ZyB4PSIzMiIgeT0iMzIiIHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM2Mzc0OEUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj4KPHN2ZyB4PSIzMiIgeT0iMzIiIHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM2Mzc0OEUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj4KPHN2ZyB4PSIzMiIgeT0iMzIiIHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM2Mzc0OEUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj4KPHBhdGggZD0iTTIwIDIxdi0yYTQgNCAwIDAgMC00LTRIOGE0IDQgMCAwIDAtNCA0djIiLz4KPGNpcmNsZSBjeD0iMTIiIGN5PSI3IiByPSI0Ii8+Cjwvc3ZnPgo8L3N2Zz4KPC9zdmc+";
-                  }}
-                />
-              </div>
-            </motion.div>
-
-            {/* Quick stats/info cards */}
-            <motion.div variants={itemVariants} className="space-y-4">
-              <div className="glass p-4 rounded-xl">
-                <h3 className="text-lg font-semibold text-primary mb-2">Current Role</h3>
-                <p className="text-sm text-muted-foreground">Software Engineer at AFT Group</p>
-                <p className="text-xs text-muted-foreground mt-1">Dec 2024 - Present</p>
-              </div>
-              
-              <div className="glass p-4 rounded-xl">
-                <h3 className="text-lg font-semibold text-accent mb-2">Expertise</h3>
-                <div className="flex flex-wrap gap-1">
-                  {["Golang", "React", "Next.js", "Blockchain", "AI/ML"].map((tech) => (
-                    <span key={tech} className="px-2 py-1 text-xs bg-accent/10 text-accent rounded">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              <div className="glass p-4 rounded-xl">
-                <h3 className="text-lg font-semibold text-primary mb-2">Experience</h3>
-                <p className="text-sm text-muted-foreground">2+ years in full-stack development</p>
-                <p className="text-xs text-muted-foreground">Blockchain & AI integration specialist</p>
-              </div>
-            </motion.div>
-
-            <motion.div variants={itemVariants} className="mt-8 text-center lg:text-left">
-              <motion.a
-                href="#about"
-                animate={{ y: [0, 10, 0] }}
-                transition={{ duration: 2, repeat: Infinity }}
-                className="text-muted-foreground hover:text-primary transition-colors duration-300 inline-block"
-              >
-                <ArrowDown size={24} />
-              </motion.a>
-            </motion.div>
+      <div className="hero-rest grid gap-8 md:grid-cols-2 md:gap-16">
+        <p
+          className="m-0 font-semibold leading-[0.95]"
+          style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.25rem, 4.6vw, 3.75rem)", maxWidth: "16ch" }}
+        >
+          {profile.tagline}
+        </p>
+        <div>
+          <p className="lede muted mt-0 mb-9">{profile.intro}</p>
+          <div className="flex flex-wrap gap-4">
+            <Button href="#work">See my work</Button>
+            <Button href={`mailto:${profile.email}`} variant="ghost">
+              Email me
+            </Button>
           </div>
         </div>
-      </motion.div>
+      </div>
     </section>
   );
-};
-
-export default Hero;
+}
