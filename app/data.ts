@@ -4,7 +4,7 @@ export const profile = {
   tagline: "Software engineer building AI-native systems.",
   intro: "I've spent 3+ years across web, backend, AI and infrastructure. I pick up whatever the problem needs, learn fast, and take it all the way to production. Right now I'm going deep on system design.",
   stack: ["TypeScript", "Python", "Next.js", "FastAPI", "Postgres", "Redis", "MCP", "Vercel AI SDK", "Twilio", "Docker"],
-  photo: "/avatar.jpg",
+  photo: "/pfp.jpg",
   email: "punarvpawade17@gmail.com",
   github: "https://github.com/inciner8r",
   // Drop a PDF in /public and set this (e.g. "/resume.pdf") to show a resume button in the hero.
