@@ -16,7 +16,7 @@ export const profile = {
 
 export const about = [
   "My strongest work is where LLMs meet production. I built an MCP server that lets AI agents like Claude and ChatGPT edit live customer websites, behind scoped keys and a preview-then-confirm publish step. I've also debugged flaky model output down to the individual upstream host serving it.",
-  "I'm just as comfortable in an incident. I've dealt with a stalled logging pipeline, backups growing without bound and a connection pool leaking under load. I work AI-assisted and move fast, but I own the architecture and the root cause, and I leave a guard test behind.",
+  "I'm just as comfortable in an incident. I've dealt with a stalled logging pipeline, backups growing without bound and a connection pool leaking under load. I move fast, but I own the architecture and the root cause, and every fix leaves a guard test behind.",
   "Before this I spent two years in Web3, building trading bots, chain indexers, VPN infrastructure and hackathon projects. Away from the keyboard: guitar, music production, sport and games.",
 ];
 
