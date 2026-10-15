@@ -2,14 +2,18 @@
 
 :root {
   --bone: #ece8e1;
-  --bone-2: #e2ddd4;
   --ink: #0f1923;
-  --ink-2: #1f2731;
   --red: #ff4655;
-  --steel: #7b8389;
+
+  /* light */
+  --bg: var(--bone);
+  --fg: var(--ink);
   --muted: #545d65;
-  --line: rgba(15, 25, 35, 0.22);
-  --line-dark: rgba(236, 232, 225, 0.22);
+  --line: rgba(15, 25, 35, 0.2);
+  --band-bg: var(--ink);
+  --band-fg: var(--bone);
+  --band-muted: #a9aeb2;
+  --band-line: rgba(236, 232, 225, 0.18);
 
   --font-display: var(--font-big-shoulders), "Arial Narrow", sans-serif;
   --font-body: var(--font-barlow), system-ui, sans-serif;
@@ -17,6 +21,19 @@
   --gutter: clamp(1rem, 4vw, 3rem);
   --max: 1240px;
   --ease: cubic-bezier(0.7, 0, 0.2, 1);
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  --bg: #0f1923;
+  --fg: #ece8e1;
+  --muted: #9aa3aa;
+  --line: rgba(236, 232, 225, 0.13);
+  --band-bg: #0a1219;
+  --band-fg: #ece8e1;
+  --band-muted: #9aa3aa;
+  --band-line: rgba(236, 232, 225, 0.11);
+  color-scheme: dark;
 }
 
 * {
@@ -29,8 +46,8 @@ html {
 
 body {
   margin: 0;
-  background: var(--bone);
-  color: var(--ink);
+  background: var(--bg);
+  color: var(--fg);
   font-family: var(--font-body);
   font-size: 1.0625rem;
   line-height: 1.6;
@@ -72,7 +89,7 @@ a {
   font-family: var(--font-display);
   font-weight: 800;
   text-transform: uppercase;
-  font-size: clamp(3rem, 8vw, 6.5rem);
+  font-size: clamp(2.5rem, 5.5vw, 4.5rem);
   line-height: 0.9;
 }
 
@@ -80,7 +97,7 @@ a {
   font-family: var(--font-display);
   font-weight: 700;
   text-transform: uppercase;
-  font-size: clamp(1.75rem, 3.4vw, 2.5rem);
+  font-size: clamp(1.5rem, 2.6vw, 2rem);
   line-height: 1;
 }
 
@@ -93,19 +110,16 @@ a {
 .muted {
   color: var(--muted);
 }
-.on-ink .muted {
-  color: #a9aeb2;
-}
 
 /* ---------- Valorant-style button ---------- */
 
 .vbtn {
   --frame: var(--line);
   --fill: var(--red);
-  --text: var(--bone);
-  --sweep: var(--ink);
-  --sweep-text: var(--bone);
-  --corner: var(--ink);
+  --text: #fff;
+  --sweep: var(--fg);
+  --sweep-text: var(--bg);
+  --corner: var(--fg);
 
   position: relative;
   display: inline-flex;
@@ -202,31 +216,16 @@ a {
 
 .vbtn--ghost {
   --fill: transparent;
-  --text: var(--ink);
+  --text: var(--fg);
   --corner: var(--red);
 }
 .vbtn--ghost .vbtn__inner {
-  box-shadow: inset 0 0 0 1px var(--ink);
+  box-shadow: inset 0 0 0 1px var(--fg);
 }
 
 .vbtn--small .vbtn__inner {
   padding: 0.6rem 1.25rem;
   font-size: 0.8rem;
-}
-
-/* On dark backgrounds */
-.on-ink .vbtn {
-  --frame: var(--line-dark);
-  --sweep: var(--bone);
-  --sweep-text: var(--ink);
-  --corner: var(--bone);
-}
-.on-ink .vbtn--ghost {
-  --text: var(--bone);
-  --corner: var(--red);
-}
-.on-ink .vbtn--ghost .vbtn__inner {
-  box-shadow: inset 0 0 0 1px var(--bone);
 }
 
 /* ---------- Text link with sweep underline ---------- */
@@ -251,8 +250,13 @@ a {
 }
 
 .ink {
-  background: var(--ink);
-  color: var(--bone);
+  --bg: var(--band-bg);
+  --fg: var(--band-fg);
+  --muted: var(--band-muted);
+  --line: var(--band-line);
+  background: var(--bg);
+  color: var(--fg);
+  border-top: 1px solid var(--line);
 }
 
 .rule {
@@ -267,30 +271,150 @@ a {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: color-mix(in srgb, var(--bone) 88%, transparent);
+  background: color-mix(in srgb, var(--bg) 85%, transparent);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--line);
 }
 
-/* ---------- Case study rows ---------- */
+/* ---------- Hero ---------- */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+.hero-backdrop {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-mask-image: radial-gradient(ellipse 80% 90% at 70% 40%, #000 30%, transparent 85%);
+  mask-image: radial-gradient(ellipse 80% 90% at 70% 40%, #000 30%, transparent 85%);
+}
+
+.portrait {
+  width: min(340px, 78vw);
+}
+.portrait__frame {
+  position: relative;
+  aspect-ratio: 1;
+}
+/* offset red block behind the photo */
+.portrait__frame::before {
+  content: "";
+  position: absolute;
+  inset: -14px 14px 14px -14px;
+  border: 1px solid var(--red);
+}
+.portrait__frame img {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  clip-path: polygon(0 0, calc(100% - 34px) 0, 100% 34px, 100% 100%, 0 100%);
+  filter: grayscale(0.15) contrast(1.05);
+}
+
+/* ---------- Theme toggle ---------- */
+
+.theme-toggle {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--line);
+  background: none;
+  color: var(--fg);
+  cursor: pointer;
+  transition: border-color 0.3s var(--ease), color 0.3s var(--ease);
+}
+.theme-toggle:hover {
+  border-color: var(--red);
+  color: var(--red);
+}
+.theme-toggle__moon {
+  display: none;
+}
+:root[data-theme="light"] .theme-toggle__sun {
+  display: none;
+}
+:root[data-theme="light"] .theme-toggle__moon {
+  display: block;
+}
+
+/* ---------- Expandable case studies ---------- */
 
 .case {
   position: relative;
   border-top: 1px solid var(--line);
-  padding-block: 2.5rem;
+}
+.case:last-child {
+  border-bottom: 1px solid var(--line);
 }
 .case::before {
   content: "";
   position: absolute;
   top: -1px;
   left: 0;
-  height: 3px;
+  height: 2px;
   width: 0;
   background: var(--red);
   transition: width 0.5s var(--ease);
 }
-.case:hover::before {
+.case:hover::before,
+.case[open]::before {
   width: 100%;
+}
+.case__summary {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  padding-block: 1.25rem;
+  cursor: pointer;
+  list-style: none;
+}
+.case__summary::-webkit-details-marker {
+  display: none;
+}
+.case__name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  line-height: 1.05;
+}
+.case__toggle {
+  position: relative;
+  flex: none;
+  width: 14px;
+  height: 14px;
+  margin-top: 0.45rem;
+}
+.case__toggle::before,
+.case__toggle::after {
+  content: "";
+  position: absolute;
+  background: var(--fg);
+  transition: transform 0.35s var(--ease), background 0.3s;
+}
+.case__toggle::before {
+  left: 0;
+  right: 0;
+  top: 6px;
+  height: 2px;
+}
+.case__toggle::after {
+  top: 0;
+  bottom: 0;
+  left: 6px;
+  width: 2px;
+}
+.case[open] .case__toggle::after {
+  transform: scaleY(0);
+}
+.case:hover .case__toggle::before,
+.case:hover .case__toggle::after {
+  background: var(--red);
 }
 
 .chip {
@@ -300,8 +424,10 @@ a {
   padding: 0.2rem 0.6rem;
   border: 1px solid var(--line);
 }
-.on-ink .chip {
-  border-color: var(--line-dark);
+.chip--solid {
+  background: var(--fg);
+  color: var(--bg);
+  border-color: var(--fg);
 }
 
 /* ---------- Hero entrance (the one orchestrated moment) ---------- */

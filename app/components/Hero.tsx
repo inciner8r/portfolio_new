@@ -1,51 +1,65 @@
+import Image from "next/image";
 import Button from "./Button";
+import HeroBackdrop from "./HeroBackdrop";
 import { profile } from "../data";
 
 export default function Hero() {
   const [first, last] = profile.name.split(" ");
 
   return (
-    <section id="top" className="wrap pt-14 sm:pt-20 pb-20 sm:pb-28">
-      <div className="grid gap-10 lg:grid-cols-[auto_1fr] lg:items-end">
-        <h1 className="display hero-name" style={{ fontSize: "clamp(5.5rem, 21vw, 17.5rem)" }}>
-          <span>{first}</span>
-          <span>{last}</span>
-        </h1>
+    <section id="top" className="hero">
+      <HeroBackdrop />
 
-        <dl className="hero-rest m-0 border-l-2 pl-6 lg:mb-4 lg:justify-self-end" style={{ borderColor: "var(--ink)" }}>
-          <dt className="muted text-sm">Currently</dt>
-          <dd className="m-0 mt-1 text-xl font-semibold">
-            {profile.current.title}, {profile.current.company}
-          </dd>
-          <dd className="m-0 muted">Since {profile.current.since}</dd>
-          <dd className="m-0 mt-3 max-w-[30ch]">{profile.current.blurb}</dd>
-          <dt className="muted text-sm mt-6">Based in</dt>
-          <dd className="m-0 mt-1">{profile.location}</dd>
-        </dl>
-      </div>
-
-      <div
-        className="hero-mark mt-8 mb-12"
-        style={{ height: 6, width: "min(220px, 40%)", background: "var(--red)" }}
-        aria-hidden
-      />
-
-      <div className="hero-rest grid gap-8 md:grid-cols-2 md:gap-16">
-        <p
-          className="m-0 font-semibold leading-[0.95]"
-          style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.25rem, 4.6vw, 3.75rem)", maxWidth: "16ch" }}
-        >
-          {profile.tagline}
-        </p>
+      <div className="wrap relative grid gap-12 lg:grid-cols-[1fr_auto] lg:items-center pt-14 sm:pt-20 pb-20 sm:pb-24">
         <div>
-          <p className="lede muted mt-0 mb-9">{profile.intro}</p>
-          <div className="flex flex-wrap gap-4">
-            <Button href="#work">See my work</Button>
-            <Button href={`mailto:${profile.email}`} variant="ghost">
-              Email me
-            </Button>
+          <h1 className="display hero-name" style={{ fontSize: "clamp(3.75rem, 9vw, 7.5rem)" }}>
+            <span>{first}</span>
+            <span>{last}</span>
+          </h1>
+
+          <div
+            className="hero-mark mt-6 mb-8"
+            style={{ height: 5, width: 140, background: "var(--red)" }}
+            aria-hidden
+          />
+
+          <div className="hero-rest">
+            <p
+              className="m-0 font-semibold leading-[0.95]"
+              style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem, 3vw, 2.5rem)", maxWidth: "20ch" }}
+            >
+              {profile.tagline}
+            </p>
+            <p className="lede muted mt-5 mb-0">{profile.intro}</p>
+            <ul className="flex flex-wrap gap-2 list-none p-0 mt-6 mb-9 max-w-[560px]">
+              {profile.stack.map((s) => (
+                <li key={s} className="chip">
+                  {s}
+                </li>
+              ))}
+            </ul>
+            <div className="flex flex-wrap gap-4">
+              <Button href="#experience">See my work</Button>
+              <Button href={`mailto:${profile.email}`} variant="ghost">
+                Email me
+              </Button>
+            </div>
           </div>
         </div>
+
+        <figure className="hero-rest portrait m-0">
+          <div className="portrait__frame">
+            <Image src={profile.photo} alt={profile.name} width={736} height={736} priority sizes="(min-width: 1024px) 340px, 70vw" />
+          </div>
+          <figcaption className="mt-5 pl-4 border-l-2" style={{ borderColor: "var(--fg)" }}>
+            <span className="block font-semibold">
+              {profile.current.title}, {profile.current.company}
+            </span>
+            <span className="block muted text-[0.95rem]">
+              Since {profile.current.since}. {profile.location}
+            </span>
+          </figcaption>
+        </figure>
       </div>
     </section>
   );

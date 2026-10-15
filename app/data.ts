@@ -2,8 +2,9 @@ export const profile = {
   name: "Punarv Pawade",
   role: "Full-stack engineer",
   tagline: "I build AI features that are safe to put in production.",
-  intro:
-    "Full-stack engineer on multi-tenant SaaS for UK car dealers: websites, an AI page builder, cloud telephony and a mobile app. I own the design, ship it, and when it breaks I find the root cause and turn it into a test.",
+  intro: "Full-stack engineer on multi-tenant SaaS: LLM pipelines, MCP servers, real-time telephony and the infrastructure under them.",
+  stack: ["TypeScript", "Python", "Next.js", "FastAPI", "Postgres", "Redis", "MCP", "Vercel AI SDK", "Twilio", "Docker"],
+  photo: "/avatar.jpg",
   email: "punarvpawade17@gmail.com",
   location: "Maharashtra, India · working remotely",
   current: {
@@ -113,8 +114,6 @@ export const experience: Job[] = [
     summary:
       "Automotive retail and finance software for UK dealers: a multi-tenant website platform with an AI page builder, cloud telephony, a dealer management system and a used-car marketplace.",
     points: [
-      "Shipped the MCP server and agent-first page authoring that let customers' own AI agents build their sites",
-      "Designed call routing, metering and billing for the cloud phone system, plus native calling in the mobile app",
       "Built CRM single sign-on with algorithm pinning, issuer allow-listing and replay protection",
       "Re-architected the nightly multi-dealer stock sync into a BullMQ fan-out with per-dealer retries",
       "Built WhatsApp magic-link login that signs in the original tab in real time over Socket.IO and Redis",

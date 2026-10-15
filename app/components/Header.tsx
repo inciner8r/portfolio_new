@@ -1,7 +1,7 @@
 import Button from "./Button";
+import ThemeToggle from "./ThemeToggle";
 
 const links = [
-  { label: "Work", href: "#work" },
   { label: "Experience", href: "#experience" },
   { label: "About", href: "#about" },
 ];
@@ -13,7 +13,7 @@ export default function Header() {
         <a href="#top" className="display text-2xl no-underline" aria-label="Punarv Pawade, back to top">
           PP<span style={{ color: "var(--red)" }}>.</span>
         </a>
-        <div className="flex items-center gap-6 sm:gap-9">
+        <div className="flex items-center gap-5 sm:gap-8">
           <ul className="hidden sm:flex gap-8 list-none m-0 p-0">
             {links.map((l) => (
               <li key={l.href}>
@@ -23,6 +23,7 @@ export default function Header() {
               </li>
             ))}
           </ul>
+          <ThemeToggle />
           <Button href="#contact" size="small">
             Get in touch
           </Button>

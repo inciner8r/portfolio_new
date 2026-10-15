@@ -3,14 +3,12 @@ import { profile, socials } from "../data";
 
 export default function Contact() {
   return (
-    <section id="contact" className="ink on-ink">
+    <section id="contact" className="ink">
       <div className="wrap section">
-        <h2 className="display" style={{ fontSize: "clamp(4rem, 13vw, 11rem)" }}>
-          Let&apos;s build
-          <br />
-          something
+        <h2 className="display" style={{ fontSize: "clamp(2.75rem, 7vw, 5.5rem)" }}>
+          Let&apos;s build something
         </h2>
-        <p className="lede mt-8 mb-10" style={{ color: "#b9bcbf" }}>
+        <p className="lede muted mt-6 mb-9">
           I&apos;m open to full-stack and AI engineering roles. The fastest way to reach me is email.
         </p>
         <div className="flex flex-wrap gap-4">
@@ -21,9 +19,9 @@ export default function Contact() {
         </div>
       </div>
 
-      <footer className="border-t" style={{ borderColor: "var(--line-dark)" }}>
+      <footer className="border-t" style={{ borderColor: "var(--line)" }}>
         <div className="wrap flex flex-wrap items-center justify-between gap-4 py-6 text-sm">
-          <p className="m-0" style={{ color: "var(--steel)" }}>
+          <p className="m-0 muted">
             © {new Date().getFullYear()} {profile.name}
           </p>
           <ul className="flex gap-6 list-none m-0 p-0">
