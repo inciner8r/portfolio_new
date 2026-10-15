@@ -25,12 +25,12 @@ export default function Hero() {
 
           <div className="hero-rest">
             <p
-              className="m-0 font-semibold leading-[0.95]"
-              style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem, 3vw, 2.5rem)", maxWidth: "20ch" }}
+              className="m-0 font-semibold leading-[1.1] tracking-[-0.02em]"
+              style={{ fontSize: "clamp(1.6rem, 2.6vw, 2.1rem)", maxWidth: "22ch" }}
             >
               {profile.tagline}
             </p>
-            <p className="lede muted mt-5 mb-0">{profile.intro}</p>
+            <p className="lede muted mt-4 mb-0" style={{ maxWidth: "44ch" }}>{profile.intro}</p>
             <ul className="flex flex-wrap gap-2 list-none p-0 mt-6 mb-9 max-w-[560px]">
               {profile.stack.map((s) => (
                 <li key={s} className="chip">

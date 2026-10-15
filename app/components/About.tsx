@@ -16,7 +16,7 @@ export default function About() {
         </div>
 
         <div>
-          <h3 className="h3 mb-6 lg:mt-[7.5rem]">Toolkit</h3>
+          <h3 className="h3 mb-6 lg:mt-[5.6rem]">Toolkit</h3>
           <dl className="m-0">
             {skills.map((s) => (
               <div

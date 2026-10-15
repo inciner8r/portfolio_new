@@ -5,7 +5,7 @@ export default function Contact() {
   return (
     <section id="contact" className="ink">
       <div className="wrap section">
-        <h2 className="display" style={{ fontSize: "clamp(2.75rem, 7vw, 5.5rem)" }}>
+        <h2 className="h2" style={{ fontSize: "clamp(2.25rem, 5vw, 3.75rem)" }}>
           Let&apos;s build something
         </h2>
         <p className="lede muted mt-6 mb-9">

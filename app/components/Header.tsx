@@ -24,7 +24,7 @@ export default function Header() {
             ))}
           </ul>
           <ThemeToggle />
-          <Button href="#contact" size="small">
+          <Button href="#contact" size="small" variant="ghost">
             Get in touch
           </Button>
         </div>
