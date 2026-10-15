@@ -1,8 +1,8 @@
 export const profile = {
   name: "Punarv Pawade",
   role: "Software Engineer",
-  tagline: "I ship software across the whole stack.",
-  intro: "Software engineer with 3+ years across web, backend, AI and infrastructure, and a growing pull towards systems and security. I pick up whatever the problem needs, learn fast, and take it all the way to production.",
+  tagline: "Software engineer building AI-native systems.",
+  intro: "I've spent 3+ years across web, backend, AI and infrastructure, and I'm increasingly pulled towards systems and security. I pick up whatever the problem needs, learn fast, and take it all the way to production.",
   stack: ["TypeScript", "Python", "Next.js", "FastAPI", "Postgres", "Redis", "MCP", "Vercel AI SDK", "Twilio", "Docker"],
   photo: "/avatar.jpg",
   email: "punarvpawade17@gmail.com",

@@ -16,7 +16,7 @@ const body = Barlow({
 
 const title = "Punarv Pawade | Software Engineer";
 const description =
-  "Software engineer with 3+ years building web, backend, AI and infrastructure systems that run in production.";
+  "Software engineer building AI-native systems: 3+ years across web, backend, AI and infrastructure, shipped to production.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.punarv.dev"),
