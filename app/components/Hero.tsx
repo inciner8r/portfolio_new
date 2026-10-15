@@ -43,7 +43,20 @@ export default function Hero() {
               <Button href={`mailto:${profile.email}`} variant="ghost">
                 Email me
               </Button>
+              {profile.resume && (
+                <Button href={profile.resume} variant="ghost" external>
+                  Resume
+                </Button>
+              )}
             </div>
+            <p className="mt-6 mb-0 flex gap-6">
+              <a href={profile.github} target="_blank" rel="noopener noreferrer" className="tlink">
+                GitHub
+              </a>
+              <a href="https://www.linkedin.com/in/punarvpawade/" target="_blank" rel="noopener noreferrer" className="tlink">
+                LinkedIn
+              </a>
+            </p>
           </div>
         </div>
 

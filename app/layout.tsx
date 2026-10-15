@@ -14,9 +14,9 @@ const body = Barlow({
   weight: ["400", "500", "600", "700"],
 });
 
-const title = "Punarv Pawade | Full-stack & AI Engineer";
+const title = "Punarv Pawade | Software Engineer";
 const description =
-  "Full-stack engineer building production AI systems, multi-tenant SaaS, cloud telephony and the infrastructure under them.";
+  "Software engineer with 3+ years building web, backend, AI and infrastructure systems that run in production.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.punarv.dev"),
@@ -24,8 +24,9 @@ export const metadata: Metadata = {
   description,
   keywords: [
     "Punarv Pawade",
+    "Software Engineer",
     "Full-stack Engineer",
-    "AI Engineer",
+    "Backend Engineer",
     "MCP",
     "Next.js",
     "TypeScript",

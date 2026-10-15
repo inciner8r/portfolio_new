@@ -16,6 +16,7 @@ function CaseStudies() {
             <span className="flex-1">
               <span className="case__name">{c.name}</span>
               <span className="block muted mt-1">{c.pitch}</span>
+              <span className="case__patterns">{c.patterns.join(", ")}</span>
             </span>
             <span className="case__toggle" aria-hidden />
           </summary>

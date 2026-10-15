@@ -289,6 +289,22 @@ a {
   border-bottom: 1px solid var(--line);
 }
 
+.case__patterns {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.case__patterns::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-right: 0.5rem;
+  vertical-align: 0.1em;
+  background: var(--red);
+}
+
 /* ---------- Range ---------- */
 
 .range-head,

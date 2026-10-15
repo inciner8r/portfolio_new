@@ -1,11 +1,14 @@
 export const profile = {
   name: "Punarv Pawade",
-  role: "Full-stack engineer",
+  role: "Software Engineer",
   tagline: "I ship software across the whole stack.",
-  intro: "Web, backend, AI and infrastructure, with a growing pull towards systems and security. I pick up whatever the problem needs, learn fast, and take it all the way to production.",
+  intro: "Software engineer with 3+ years across web, backend, AI and infrastructure, and a growing pull towards systems and security. I pick up whatever the problem needs, learn fast, and take it all the way to production.",
   stack: ["TypeScript", "Python", "Next.js", "FastAPI", "Postgres", "Redis", "MCP", "Vercel AI SDK", "Twilio", "Docker"],
   photo: "/avatar.jpg",
   email: "punarvpawade17@gmail.com",
+  github: "https://github.com/inciner8r",
+  // Drop a PDF in /public and set this (e.g. "/resume.pdf") to show a resume button in the hero.
+  resume: undefined as string | undefined,
   location: "Maharashtra, India · working remotely",
   current: {
     company: "AFT Group",
@@ -27,6 +30,7 @@ export type CaseStudy = {
   problem: string;
   built: string[];
   detail: string;
+  patterns: string[];
   stack: string[];
   status: "Live" | "Shipped" | "In beta";
 };
@@ -45,6 +49,7 @@ export const caseStudies: CaseStudy[] = [
     ],
     detail:
       "Timestamps couldn't serve as the version because browser saves never bumped them. The version is a hash of the stored config instead.",
+    patterns: ["Compare-and-set", "Idempotency keys", "Preview-then-confirm writes", "Spend caps and concurrency limits", "Least-privilege scoped keys"],
     stack: ["FastAPI", "Next.js", "MongoDB", "Redis", "OAuth 2", "MCP"],
     status: "Live",
   },
@@ -61,6 +66,7 @@ export const caseStudies: CaseStudy[] = [
     ],
     detail:
       "One unanswered call re-entered the assignment callback four times in 30 seconds. Making the claim idempotent at the database layer fixed the whole class of bug.",
+    patterns: ["Idempotent claims", "Outbox pattern", "Reconciliation", "Lease-based jobs", "Fan-out routing"],
     stack: ["TanStack Start", "Cloudflare Workers", "Supabase", "Twilio", "React Native"],
     status: "Live",
   },
@@ -77,6 +83,7 @@ export const caseStudies: CaseStudy[] = [
     ],
     detail:
       "The model was copying the full-page code from its own earlier turns, which outweighed the system prompt. Normalising the chat history fixed it.",
+    patterns: ["AST-based patching", "Intent routing", "Provider pinning", "Cost and latency observability"],
     stack: ["Next.js", "Vercel AI SDK", "OpenRouter", "Babel", "Zod"],
     status: "Live",
   },
@@ -93,6 +100,7 @@ export const caseStudies: CaseStudy[] = [
     ],
     detail:
       "The backups grew because snapshots were grouped by an ephemeral container ID, so retention never matched anything.",
+    patterns: ["Tenant isolation", "Allow-listed data exposure", "Retention policies", "Keyset pagination", "Covering indexes"],
     stack: ["Docker", "Traefik", "Grafana / Loki", "Postgres", "GitHub Actions"],
     status: "Live",
   },
@@ -204,6 +212,7 @@ export const range: Area[] = [
   {
     area: "Backend & data",
     shipped: "Usage billing with reconciliation, job queues, in-database analytics with keyset pagination",
+    exploring: "Distributed systems design: consistency, partitioning, and queues at scale",
     tools: "FastAPI, Node / NestJS, Postgres, MongoDB, Redis, BullMQ",
   },
   {
